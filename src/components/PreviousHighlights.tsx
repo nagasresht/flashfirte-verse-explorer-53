@@ -4,29 +4,38 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Star } from "lucide-react";
 
 const PreviousHighlights = () => {
-  const highlights = [
-    {
-      id: 1,
-      title: "AI Innovation Challenge",
-      description: "200+ participants built revolutionary AI solutions",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&h=300&fit=crop",
-      stats: "200+ Participants"
-    },
-    {
-      id: 2,
-      title: "Design Thinking Workshop",
-      description: "Creative minds shaped the future of UX design",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop",
-      stats: "50+ Projects"
-    },
-    {
-      id: 3,
-      title: "Gaming Championship",
-      description: "Epic battles in the ultimate gaming arena",
-      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&h=300&fit=crop",
-      stats: "24 Teams"
-    }
-  ];
+    const highlights = [
+  {
+    
+  id: 1,
+  title: "Idea A Thon",
+  description: "Innovate groundbreaking solutions to real challenges.",
+  image: "/1.jpg", // ✅ if 1.jpg is inside the /public folder
+  stats: "200+ Participants"
+},
+  {
+    id: 2,
+    title: "Game-A-Thon",
+    description: "Showcase gaming skills in electrifying battles.",
+    image: "/2.jpg",
+    stats: "50+ Projects"
+  },
+  {
+    id: 3,
+    title: "Design-A-Thon",
+    description: "Craft stunning visuals and intuitive experiences.",
+    image: "/3.jpg",
+    stats: "24 Teams"
+  },
+  {
+    id: 4,
+    title: "Speak-A-Thon",
+    description: "Command the stage with persuasive power.",
+    image: "/4.jpg",
+    stats: "100+ Orators"
+  }
+];
+
 
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-black to-gray-900">
@@ -46,7 +55,7 @@ const PreviousHighlights = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.id}

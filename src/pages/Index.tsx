@@ -1,22 +1,21 @@
-
 import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Home, Calendar, Clock, Trophy, Joystick, Monitor, Star, MessageSquare } from "lucide-react";
+import {
+  Home, Calendar, Clock, Trophy,
+  Joystick, Monitor, Star, MessageSquare
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import ParticleBackground from "@/components/ParticleBackground";
 import EventPortal from "@/components/EventPortal";
 import PreviousHighlights from "@/components/PreviousHighlights";
-import EventTimeline from "@/components/EventTimeline";
 import Schedule from "@/components/Schedule";
+import EventDateCard from "@/components/EventDateCard";
 
 const Index = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 100]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -100]);
-  
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -34,7 +33,7 @@ const Index = () => {
   const eventPortals = [
     {
       id: "ideathon",
-      title: "Ideathon",
+      title: "Idea A THON",
       subtitle: "Tech Innovation Lab",
       description: "Dive into AI holograms and transparent circuits",
       icon: <Monitor className="w-8 h-8" />,
@@ -44,7 +43,7 @@ const Index = () => {
     },
     {
       id: "speakathon",
-      title: "Speakathon",
+      title: "Speak A THON",
       subtitle: "Public Speaking Arena",
       description: "Command the glowing stage with your voice",
       icon: <MessageSquare className="w-8 h-8" />,
@@ -54,7 +53,7 @@ const Index = () => {
     },
     {
       id: "design-realm",
-      title: "Design Realm",
+      title: "Design A THOM",
       subtitle: "Creative Studio",
       description: "Float through UI/UX wireframes and digital art",
       icon: <Star className="w-8 h-8" />,
@@ -64,7 +63,7 @@ const Index = () => {
     },
     {
       id: "gamingverse",
-      title: "Gamingverse",
+      title: "Game A THON",
       subtitle: "Pixel Arcade World",
       description: "Enter retro neon gaming paradise",
       icon: <Joystick className="w-8 h-8" />,
@@ -78,38 +77,42 @@ const Index = () => {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <ParticleBackground />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
-        <motion.div
-          style={{ y: y1 }}
-          className="text-center z-10 max-w-4xl mx-auto"
-        >
+        <motion.div style={{ y: y1 }} className="text-center z-10 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
             className="mb-8"
           >
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
-              FlashFirte
-            </h1>
+            <div className="flex items-end justify-center gap-4">
+              <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
+                Flash Forte
+              </h1>
+              <span className="text-3xl md:text-4xl font-bold text-gray-400 mb-2">3.0</span>
+            </div>
             <p className="text-2xl md:text-3xl text-cyan-400 font-light tracking-wider">
               One Event. Many Realities.
             </p>
+            <p className="text-lg md:text-xl text-gray-300 font-medium mt-2">
+              Conducted by <span className="text-white font-semibold">Computer Society of India, VNRVJIET</span>
+              </p>
+
           </motion.div>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
           >
-            Step into the multiverse of innovation, creativity, and technology.
+           Unleash your creativity and innovation in a boundless multiverse 
             <br />
-            Choose your reality. Shape the future.
+             of ideas, design, games, and expression.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -142,6 +145,9 @@ const Index = () => {
         />
       </section>
 
+      {/* ✅ Event Date Section */}
+      <EventDateCard />
+
       {/* Event Portals */}
       <section id="event-portals" className="py-20 px-4">
         <motion.div
@@ -157,7 +163,7 @@ const Index = () => {
           <p className="text-center text-gray-400 mb-16 text-lg">
             Each portal leads to a unique dimension of innovation
           </p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {eventPortals.map((portal, index) => (
               <motion.div
@@ -173,35 +179,32 @@ const Index = () => {
           </div>
         </motion.div>
       </section>
-
-      {/* Previous Year Highlights */}
       <PreviousHighlights />
-
-      {/* Event Timeline */}
-      <EventTimeline />
-
-      {/* Schedule */}
       <Schedule />
 
       {/* Footer */}
       <footer className="bg-gradient-to-t from-gray-900 to-black py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex items-center justify-center mb-8">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-cyan-400 rounded-lg mr-3 flex items-center justify-center">
-              <span className="text-black font-bold text-lg">F</span>
-            </div>
-            <h3 className="text-2xl font-bold text-orange-500">FlashFirte</h3>
-          </div>
-          <p className="text-gray-400 mb-8">
-            © 2024 FlashFirte. All rights reserved. | One Event. Many Realities.
-          </p>
-          <div className="flex justify-center space-x-6">
-            <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Privacy</a>
-            <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Terms</a>
-            <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Contact</a>
-          </div>
-        </div>
-      </footer>
+  <div className="max-w-6xl mx-auto text-center">
+    <div className="flex items-center justify-center mb-8 space-x-3">
+      <img
+        src="/new.jpg"
+        alt="Flash Forte Logo"
+        className="w-50 h-24 object-contain"
+      />
+    </div>
+
+    <p className="text-gray-400 mb-8">
+      © 2024 Flash Forte. All rights reserved. | One Event. Many Realities.
+    </p>
+
+    <div className="flex justify-center space-x-6">
+      <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Privacy</a>
+      <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Terms</a>
+      <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
+
     </div>
   );
 };

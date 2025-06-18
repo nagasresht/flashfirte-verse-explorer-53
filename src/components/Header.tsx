@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -9,16 +8,13 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const menuItems = [
+  const navItems = [
     { name: "Home", path: "/" },
-    { name: "Ideathon", path: "/ideathon" },
-    { name: "Speakathon", path: "/speakathon" },
-    { name: "Design Realm", path: "/design-realm" },
-    { name: "Gamingverse", path: "/gamingverse" },
-    { name: "Event Flow", path: "/event-flow" },
-    { name: "Previous Editions", path: "/previous-editions" },
-    { name: "Schedule", path: "/schedule" },
-    { name: "Contact", path: "/contact" }
+    { name: "Idea A Thon", path: "/idea-a-thon" },
+    { name: "Game A Thon", path: "/game-a-thon" },
+    { name: "Speak A Thon", path: "/speak-a-thon" },
+    { name: "Design A Thon", path: "/design-a-thon" },
+    { name: "Register", path: "/register" },
   ];
 
   return (
@@ -26,30 +22,29 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800"
     >
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-cyan-400 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-black font-bold text-xl">F</span>
-            </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
-              FlashFirte
-            </span>
+          {/* Logo Only */}
+          <Link to="/" className="flex items-center group">
+            <img
+              src="/new.jpg"
+              alt="Flash Forte Logo"
+              className="w-100 h-20 rounded-md object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {menuItems.map((item) => (
+          <nav className="hidden lg:flex items-center space-x-3">
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-800 ${
-                  location.pathname === item.path
-                    ? "text-orange-500 bg-gray-800"
-                    : "text-gray-300 hover:text-white"
+                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                  item.name === "Register"
+                    ? "bg-yellow-500 text-black hover:bg-yellow-400"
+                    : "bg-zinc-900 text-white hover:bg-yellow-500 hover:text-black"
                 }`}
               >
                 {item.name}
@@ -77,16 +72,15 @@ const Header = () => {
             className="lg:hidden mt-4 py-4 border-t border-gray-800"
           >
             <nav className="flex flex-col space-y-2">
-              {menuItems.map((item) => (
+              {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`px-4 py-3 rounded-lg transition-all duration-300 ${
-                    location.pathname === item.path
-                      ? "text-orange-500 bg-gray-800"
-                      : "text-gray-300 hover:text-white hover:bg-gray-800"
+                  className={`block w-full text-center px-4 py-2 rounded-full text-sm font-semibold ${
+                    item.name === "Register"
+                      ? "bg-yellow-500 text-black"
+                      : "bg-zinc-900 text-white"
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
