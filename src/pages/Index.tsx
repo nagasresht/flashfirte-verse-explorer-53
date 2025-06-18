@@ -104,12 +104,25 @@ const Index = () => {
             <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
               FLASHFORTE
             </h1>
-            <div className="text-4xl md:text-5xl font-bold mb-4 text-gray-400">
-              3.0
-            </div>
-            <p className="text-2xl md:text-3xl text-cyan-400 font-light tracking-wider">
+            <p className="text-2xl md:text-3xl text-cyan-400 font-light tracking-wider mb-6">
               One Event. Many Realities.
             </p>
+            
+            {/* Event Details */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="space-y-3 mb-8"
+            >
+              <div className="flex items-center justify-center text-orange-400">
+                <Calendar className="w-5 h-5 mr-2" />
+                <span className="text-lg font-medium">28 & 29 December 2024</span>
+              </div>
+              <p className="text-gray-300 text-lg">
+                Organized by <span className="text-orange-500 font-semibold">Computer Society of India, VNRVJIET</span>
+              </p>
+            </motion.div>
           </motion.div>
           
           <motion.p

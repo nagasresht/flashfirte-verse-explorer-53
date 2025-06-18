@@ -28,7 +28,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center group">
             <div className="relative">
               <img 
                 src="/lovable-uploads/38107830-ae11-4581-b97b-d35ab052c64a.png" 
@@ -36,12 +36,6 @@ const Header = () => {
                 className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
               />
               <div className="absolute inset-0 bg-orange-500/20 rounded-lg blur-xl group-hover:bg-orange-500/40 transition-all duration-300"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
-                FLASHFORTE
-              </span>
-              <span className="text-sm text-gray-400 font-medium">3.0</span>
             </div>
           </Link>
 
