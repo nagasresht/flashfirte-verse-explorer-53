@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -27,23 +27,30 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <img 
-                src="/lovable-uploads/38107830-ae11-4581-b97b-d35ab052c64a.png" 
-                alt="FlashForte Logo" 
-                className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-orange-500/20 rounded-lg blur-xl group-hover:bg-orange-500/40 transition-all duration-300"></div>
+          {/* Logo and Event Info */}
+          <div className="flex items-center space-x-6">
+            <Link to="/" className="flex items-center group">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/38107830-ae11-4581-b97b-d35ab052c64a.png" 
+                  alt="FlashForte Logo" 
+                  className="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-orange-500/20 rounded-lg blur-xl group-hover:bg-orange-500/40 transition-all duration-300"></div>
+              </div>
+            </Link>
+            
+            {/* Event Details */}
+            <div className="hidden md:flex flex-col text-sm">
+              <div className="flex items-center text-orange-400 mb-1">
+                <Calendar className="w-4 h-4 mr-2" />
+                <span className="font-medium">28 & 29 December 2024</span>
+              </div>
+              <div className="text-gray-400">
+                Organized by <span className="text-orange-500 font-medium">Computer Society of India, VNRVJIET</span>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-bold bg-gradient-to-r from-orange-500 to-orange-400 bg-clip-text text-transparent">
-                FLASHFORTE
-              </span>
-              <span className="text-sm text-gray-400 font-medium">3.0</span>
-            </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
@@ -82,6 +89,17 @@ const Header = () => {
             exit={{ opacity: 0, y: -20 }}
             className="lg:hidden mt-4 py-4 border-t border-orange-500/30"
           >
+            {/* Mobile Event Details */}
+            <div className="md:hidden mb-4 pb-4 border-b border-orange-500/20">
+              <div className="flex items-center text-orange-400 mb-2">
+                <Calendar className="w-4 h-4 mr-2" />
+                <span className="font-medium">28 & 29 December 2024</span>
+              </div>
+              <div className="text-gray-400 text-sm">
+                Organized by <span className="text-orange-500 font-medium">Computer Society of India, VNRVJIET</span>
+              </div>
+            </div>
+            
             <nav className="flex flex-col space-y-2">
               {menuItems.map((item) => (
                 <Link
