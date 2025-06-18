@@ -53,8 +53,8 @@ const Index = () => {
       route: "/speakathon"
     },
     {
-      id: "design-realm",
-      title: "Design Realm",
+      id: "designathon",
+      title: "Designathon",
       subtitle: "Creative Studio",
       description: "Float through UI/UX wireframes and digital art",
       icon: <Star className="w-8 h-8" />,
@@ -63,8 +63,8 @@ const Index = () => {
       route: "/design-realm"
     },
     {
-      id: "gamingverse",
-      title: "Gamingverse",
+      id: "gameathon",
+      title: "Gameathon",
       subtitle: "Pixel Arcade World",
       description: "Enter retro neon gaming paradise",
       icon: <Joystick className="w-8 h-8" />,
@@ -75,25 +75,38 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden relative">
+      {/* Enhanced background effects */}
+      <div className="fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.1)_0%,transparent_70%)]"></div>
+      
       <ParticleBackground />
       <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
+        {/* Animated grid background */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,165,0,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,165,0,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20 animate-pulse"></div>
+        
         <motion.div
           style={{ y: y1 }}
-          className="text-center z-10 max-w-4xl mx-auto"
+          className="text-center z-10 max-w-4xl mx-auto relative"
         >
+          {/* Glowing orb behind title */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl animate-pulse"></div>
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="mb-8"
+            className="mb-8 relative"
           >
             <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
-              FlashFirte
+              FLASHFORTE
             </h1>
+            <div className="text-4xl md:text-5xl font-bold mb-4 text-gray-400">
+              3.0
+            </div>
             <p className="text-2xl md:text-3xl text-cyan-400 font-light tracking-wider">
               One Event. Many Realities.
             </p>
@@ -117,7 +130,7 @@ const Index = () => {
           >
             <Button
               onClick={scrollToPortals}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg rounded-full shadow-2xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg rounded-full shadow-2xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 border border-orange-400/30"
             >
               <span className="mr-2">Explore the Multiverse</span>
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
@@ -125,25 +138,32 @@ const Index = () => {
           </motion.div>
         </motion.div>
 
-        {/* Floating Elements */}
+        {/* Enhanced floating elements */}
         <motion.div
           style={{
             x: mousePosition.x * 0.01,
             y: mousePosition.y * 0.01
           }}
-          className="absolute top-20 left-10 w-4 h-4 bg-cyan-400 rounded-full opacity-60 animate-pulse"
+          className="absolute top-20 left-10 w-4 h-4 bg-cyan-400 rounded-full opacity-60 animate-pulse shadow-lg shadow-cyan-400/50"
         />
         <motion.div
           style={{
             x: mousePosition.x * -0.01,
             y: mousePosition.y * -0.01
           }}
-          className="absolute bottom-20 right-10 w-6 h-6 bg-orange-500 rounded-full opacity-40 animate-bounce"
+          className="absolute bottom-20 right-10 w-6 h-6 bg-orange-500 rounded-full opacity-40 animate-bounce shadow-lg shadow-orange-500/50"
+        />
+        <motion.div
+          style={{
+            x: mousePosition.x * 0.005,
+            y: mousePosition.y * 0.005
+          }}
+          className="absolute top-1/3 right-20 w-3 h-3 bg-purple-500 rounded-full opacity-50 animate-ping"
         />
       </section>
 
       {/* Event Portals */}
-      <section id="event-portals" className="py-20 px-4">
+      <section id="event-portals" className="py-20 px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -183,17 +203,20 @@ const Index = () => {
       {/* Schedule */}
       <Schedule />
 
-      {/* Footer */}
-      <footer className="bg-gradient-to-t from-gray-900 to-black py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
+      {/* Enhanced Footer */}
+      <footer className="bg-gradient-to-t from-gray-900/80 to-black/80 py-16 px-4 relative border-t border-orange-500/20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,165,0,0.05)_0%,transparent_70%)]"></div>
+        <div className="max-w-6xl mx-auto text-center relative z-10">
           <div className="flex items-center justify-center mb-8">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-cyan-400 rounded-lg mr-3 flex items-center justify-center">
-              <span className="text-black font-bold text-lg">F</span>
-            </div>
-            <h3 className="text-2xl font-bold text-orange-500">FlashFirte</h3>
+            <img 
+              src="/lovable-uploads/38107830-ae11-4581-b97b-d35ab052c64a.png" 
+              alt="FlashForte Logo" 
+              className="w-8 h-8 object-contain mr-3"
+            />
+            <h3 className="text-2xl font-bold text-orange-500">FLASHFORTE 3.0</h3>
           </div>
           <p className="text-gray-400 mb-8">
-            © 2024 FlashFirte. All rights reserved. | One Event. Many Realities.
+            © 2024 FLASHFORTE 3.0. All rights reserved. | One Event. Many Realities.
           </p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Privacy</a>

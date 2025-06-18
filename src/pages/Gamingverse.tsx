@@ -6,11 +6,14 @@ import ParticleBackground from "@/components/ParticleBackground";
 
 const Gamingverse = () => {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative">
+      <div className="fixed inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.1)_0%,transparent_70%)]"></div>
+      
       <ParticleBackground />
       <Header />
       
-      <div className="pt-24 px-4">
+      <div className="pt-24 px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,7 +23,7 @@ const Gamingverse = () => {
           <div className="flex items-center justify-center mb-8">
             <Joystick className="w-16 h-16 text-pink-500 mr-4" />
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
-              Gamingverse
+              Gameathon
             </h1>
           </div>
           
@@ -31,7 +34,7 @@ const Gamingverse = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="bg-gray-900/50 p-8 rounded-lg border border-gray-700"
+              className="bg-gray-900/50 p-8 rounded-lg border border-pink-500/30 hover:border-pink-500/60 transition-all duration-300"
             >
               <Joystick className="w-12 h-12 text-pink-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Retro Controllers</h3>
@@ -42,7 +45,7 @@ const Gamingverse = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="bg-gray-900/50 p-8 rounded-lg border border-gray-700"
+              className="bg-gray-900/50 p-8 rounded-lg border border-orange-500/30 hover:border-orange-500/60 transition-all duration-300"
             >
               <Star className="w-12 h-12 text-orange-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Game Tokens</h3>
@@ -53,7 +56,7 @@ const Gamingverse = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="bg-gray-900/50 p-8 rounded-lg border border-gray-700"
+              className="bg-gray-900/50 p-8 rounded-lg border border-cyan-500/30 hover:border-cyan-500/60 transition-all duration-300"
             >
               <Trophy className="w-12 h-12 text-cyan-500 mx-auto mb-4" />
               <h3 className="text-xl font-bold mb-2">Glowing Trophies</h3>
