@@ -12,10 +12,10 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Idea-a-Thon", path: "/idea-a-thon" },
-    { name: "Game-a-Thon", path: "/game-a-thon" },
-    { name: "Speak-a-Thon", path: "/speak-a-thon" },
-    { name: "Design-a-Thon", path: "/design-a-thon" },
+    { name: "Idea-a-Thon", path: "/ideaathon" },
+    { name: "Game-a-Thon", path: "/gamingverse" },
+    { name: "Speak-a-Thon", path: "/speakathon" },
+    { name: "Design-a-Thon", path: "/design-realm" },
     { name: "Register", path: "/register" },
   ];
 
@@ -24,9 +24,7 @@ const Header = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-className="fixed top-0 left-0 right-0 z-50 bg-gray-800/45 backdrop-blur-md border-b border-gray-700"
-
-    >
+className="fixed top-0 left-0 right-0 z-[9999] bg-gray-800/45 backdrop-blur-md border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Logo Only */}
@@ -49,10 +47,10 @@ className="fixed top-0 left-0 right-0 z-50 bg-gray-800/45 backdrop-blur-md borde
         Register
       </button>
       <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 min-w-[200px] bg-black border border-gray-700 rounded-md z-50 hidden group-hover:flex flex-col shadow-xl">
-        <Link to="/register/ideathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Idea-a-thon</Link>
-        <Link to="/register/gameathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Game-a-thon</Link>
-        <Link to="/register/designathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Design-a-thon</Link>
-        <Link to="/register/speakathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Speak-a-thon</Link>
+        <Link to="/ideathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Idea-a-thon</Link>
+        <Link to="/gamingverse" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Game-a-thon</Link>
+        <Link to="/design-realm" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Design-a-thon</Link>
+        <Link to="/speakathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Speak-a-thon</Link>
       </div>
     </div>
   ) : (
@@ -105,25 +103,25 @@ className="fixed top-0 left-0 right-0 z-50 bg-gray-800/45 backdrop-blur-md borde
               to="/register/ideathon"
               className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
             >
-              Ideathon
+              Idea-a-thon
             </Link>
             <Link
               to="/register/gameathon"
               className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
             >
-              Gameathon
+              Game-a-thon
             </Link>
             <Link
               to="/register/designathon"
               className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
             >
-              Designathon
+              Design-a-thon
             </Link>
             <Link
               to="/register/speakathon"
               className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
             >
-              Speakathon
+              Speak-a-thon
             </Link>
           </div>
         )}
