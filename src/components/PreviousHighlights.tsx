@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Star } from "lucide-react";
@@ -8,31 +7,31 @@ const PreviousHighlights = () => {
   {
     
   id: 1,
-  title: "Idea A Thon",
+  title: "Idea-A-Thon",
   description: "Innovate groundbreaking solutions to real challenges.",
   image: "/1.jpg", // ✅ if 1.jpg is inside the /public folder
-  stats: "200+ Participants"
+  stats: "90+ Participants"
 },
   {
     id: 2,
     title: "Game-A-Thon",
     description: "Showcase gaming skills in electrifying battles.",
     image: "/2.jpg",
-    stats: "50+ Projects"
+    stats: "120+ Participants"
   },
   {
     id: 3,
     title: "Design-A-Thon",
     description: "Craft stunning visuals and intuitive experiences.",
     image: "/3.jpg",
-    stats: "24 Teams"
+    stats: "70+ Participants"
   },
   {
     id: 4,
     title: "Speak-A-Thon",
     description: "Command the stage with persuasive power.",
     image: "/4.jpg",
-    stats: "100+ Orators"
+    stats: "40+ Participants"
   }
 ];
 
@@ -51,7 +50,7 @@ const PreviousHighlights = () => {
             Previous Year Highlights
           </h2>
           <p className="text-gray-400 text-lg">
-            Relive the magic of FlashFirte's legendary moments
+            Relive the magic of FlashForte's legendary moments
           </p>
         </div>
 

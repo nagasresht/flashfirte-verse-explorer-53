@@ -33,7 +33,7 @@ const Index = () => {
   const eventPortals = [
     {
       id: "ideathon",
-      title: "Idea A THON",
+      title: "Idea-A-THON",
       subtitle: "Tech Innovation Lab",
       description: "Dive into AI holograms and transparent circuits",
       icon: <Monitor className="w-8 h-8" />,
@@ -43,7 +43,7 @@ const Index = () => {
     },
     {
       id: "speakathon",
-      title: "Speak A THON",
+      title: "Speak-A-THON",
       subtitle: "Public Speaking Arena",
       description: "Command the glowing stage with your voice",
       icon: <MessageSquare className="w-8 h-8" />,
@@ -53,7 +53,7 @@ const Index = () => {
     },
     {
       id: "design-realm",
-      title: "Design A THOM",
+      title: "Design-A-THON",
       subtitle: "Creative Studio",
       description: "Float through UI/UX wireframes and digital art",
       icon: <Star className="w-8 h-8" />,
@@ -63,7 +63,7 @@ const Index = () => {
     },
     {
       id: "gamingverse",
-      title: "Game A THON",
+      title: "Game-A-THON",
       subtitle: "Pixel Arcade World",
       description: "Enter retro neon gaming paradise",
       icon: <Joystick className="w-8 h-8" />,
