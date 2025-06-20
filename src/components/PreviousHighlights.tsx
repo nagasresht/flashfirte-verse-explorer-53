@@ -46,9 +46,11 @@ const PreviousHighlights = () => {
         className="max-w-7xl mx-auto"
       >
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-500 to-cyan-400 bg-clip-text text-transparent">
-            Previous Year Highlights
-          </h2>
+          <h2
+  className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 via-yellow-300 to-cyan-400 bg-clip-text text-transparent leading-tight md:leading-[1.2] pb-2"
+>
+  Previous Year Highlights
+</h2>
           <p className="text-gray-400 text-lg">
             Relive the magic of FlashForte's legendary moments
           </p>

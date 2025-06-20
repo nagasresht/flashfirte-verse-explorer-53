@@ -79,8 +79,39 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
+     <section className="relative min-h-screen flex items-center justify-center px-4 pt-28 md:pt-32">
         <motion.div style={{ y: y1 }} className="text-center z-10 max-w-4xl mx-auto">
+        <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1 }}
+  className="mb-8 flex flex-col items-center"
+>
+  <div className="flex justify-center items-center gap-12 mb-8">
+  {/* VNRVJIET Logo */}
+  <div className="flex flex-col items-center group">
+    <img
+      src="/vnrlogo.png"
+      alt="VNRVJIET"
+      className="h-30 md:h-20 object-contain rounded-xl transition duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_#3b82f6]"
+    />
+  </div>
+
+  {/* CSI Logo */}
+  <div className="flex flex-col items-center group">
+    <img
+      src="/csilogo.jpg"
+      alt="CSI-VNRVJIET"
+      className="h-30 md:h-20 object-contain rounded-xl transition duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_#f97316]"
+    />
+  </div>
+</div>
+
+</motion.div>
+
+
+
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -157,9 +188,9 @@ const Index = () => {
           viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-cyan-400 bg-clip-text text-transparent">
-            Choose Your Reality
-          </h2>
+         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-orange-500 to-cyan-400 bg-clip-text text-transparent leading-tight pb-2">
+  Choose Your Reality
+</h2>
           <p className="text-center text-gray-400 mb-16 text-lg">
             Each portal leads to a unique dimension of innovation
           </p>

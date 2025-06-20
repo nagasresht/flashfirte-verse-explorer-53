@@ -2,7 +2,7 @@ import { CalendarDays, Clock, Monitor } from "lucide-react";
 
 const EventDateCard = () => {
   return (
-    <div className="bg-zinc-900 text-white p-6 rounded-xl shadow-lg border border-yellow-600 max-w-sm mx-auto mt-16">
+    <div className="bg-zinc-900 text-white p-6 rounded-xl shadow-lg border border-yellow-600 max-w-sm mx-auto  mt-24 md:mt-32 lg:mt-36">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-yellow-400 text-lg font-semibold">JUNE 2025</h3>
         <CalendarDays className="text-yellow-400 w-6 h-6" />

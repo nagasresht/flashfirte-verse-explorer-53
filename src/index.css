@@ -101,3 +101,17 @@
     @apply bg-background text-foreground;
   }
 }
+@keyframes csi-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px #3b82f6);
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #3b82f6);
+    transform: scale(1.03);
+  }
+}
+
+.animate-csi-glow {
+  animation: csi-glow 2.5s ease-in-out infinite;
+}

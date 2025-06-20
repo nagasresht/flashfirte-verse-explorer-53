@@ -100,10 +100,10 @@ const DesignAThon = () => {
               repeat: Infinity,
               ease: "linear"
             }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
+           style={{
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+}}
           />
         ))}
       </div>
@@ -122,11 +122,11 @@ const DesignAThon = () => {
           >
             <div className="flex items-center justify-center mb-4">
               <Star className="w-16 h-16 text-purple-500 mr-4" />
-              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent leading-tight pb-2 mt-6 mb-6">
                 Design-A-Thon
               </h1>
             </div>
-            <p className="text-2xl md:text-3xl text-pink-400 font-light tracking-wider">
+            <p className="text-2xl md:text-3xl text-pink-400 font-light tracking-wider leading-tight pb-2">
               Floating Creative Studio
             </p>
           </motion.div>
@@ -135,7 +135,7 @@ const DesignAThon = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+            className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed leading-tight pb-2"
           >
             Unleash your creative potential in the ultimate design challenge.
             <br />
@@ -150,18 +150,25 @@ const DesignAThon = () => {
           >
             <Button
               onClick={handleStartCreatingClick}
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 hover:scale-105 leading-tight pb-2"
             >
               <Sparkles className="mr-2 w-5 h-5" />
               Start Creating
             </Button>
-            <Button 
+            <Button
               onClick={handleViewGalleryClick}
               variant="outline" 
-              className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
+              className="border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-white px-8 py-4 text-lg rounded-full transition-all duration-300 leading-tight pb-2"
             >
               <Monitor className="mr-2 w-5 h-5" />
               View Gallery
+            </Button>
+            <Button
+              // Add your onClick handler here if needed
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg rounded-full shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300 hover:scale-105 leading-tight pb-2"
+            >
+              <Pen className="mr-2 w-5 h-5" />
+              Register Now
             </Button>
           </motion.div>
         </motion.div>
@@ -190,10 +197,10 @@ const DesignAThon = () => {
           viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight pb-2">
             Creative Studio
           </h2>
-          <p className="text-center text-gray-400 mb-16 text-lg">
+          <p className="text-center text-gray-400 mb-16 text-lg leading-tight pb-2">
             Your floating design playground
           </p>
 
@@ -210,8 +217,10 @@ const DesignAThon = () => {
               >
                 <Card className="bg-gradient-to-br from-gray-900/80 to-black/60 backdrop-blur-md border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 h-full">
                   <CardContent className="p-6 text-center">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${challenge.color} flex items-center justify-center group-hover:rotate-12 transition-transform duration-300`}>
-                      {challenge.icon}
+                    <div
+  className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${challenge.color} flex items-center justify-center group-hover:rotate-12 transition-transform duration-300`}
+>
+
                     </div>
                     <h3 className="text-xl font-bold mb-2 text-white group-hover:text-purple-300 transition-colors">
                       {challenge.title}
@@ -236,10 +245,10 @@ const DesignAThon = () => {
           viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight pb-2">
             The Design Journey
           </h2>
-          <p className="text-center text-gray-400 mb-16 text-lg">
+          <p className="text-center text-gray-400 mb-16 text-lg leading-tight pb-2">
             Your path to creative excellence
           </p>
 
@@ -272,7 +281,7 @@ const DesignAThon = () => {
       </section>
 
       {/* Tools Section */}
-      <section ref={arsenalRef} className="py-20 px-4 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
+      <section ref={arsenalRef} className="pt-[196px] pb-20 px-4 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
         <motion.div
           style={{ y: y2 }}
           className="max-w-6xl mx-auto text-center"
@@ -282,7 +291,7 @@ const DesignAThon = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mt-14"
+            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mt-12 leading-tight pb-2"
           >
             Design Arsenal
           </motion.h2>
@@ -291,12 +300,11 @@ const DesignAThon = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-gray-400 mb-12 text-lg"
+            className="text-gray-400 mb-6 text-lg leading-tight pb-1"
           >
             Master these powerful tools to bring your visions to life
           </motion.p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-0 pb-0">
             {tools.map((tool, index) => (
               <motion.div
                 key={index}
@@ -305,7 +313,7 @@ const DesignAThon = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="bg-gradient-to-br from-purple-800/30 to-pink-800/30 backdrop-blur-md border border-purple-500/20 rounded-xl p-6 hover:border-purple-400/40 transition-all duration-300 cursor-pointer"
+                className="bg-gradient-to-br from-purple-800/30 to-pink-800/30 backdrop-blur-md border border-purple-500/20 rounded-xl p-6 hover:border-purple-400/40 transition-all duration-100 cursor-pointer"
               >
                 <div className="text-4xl mb-2">{tool.icon}</div>
                 <div className="text-white font-medium">{tool.name}</div>
@@ -316,11 +324,11 @@ const DesignAThon = () => {
       </section>
 
       {/* Gallery Section */}
-      <div ref={galleryRef} className="text-white py-16 px-4 lg:px-32">
-        <h2 className="text-4xl font-bold text-center mb-4">
+      <div ref={galleryRef} className="text-white py-16 px-4 lg:px-32 mb-0 pb-0">
+        <h2 className="text-4xl font-bold text-center mb-4 leading-tight pb-2">
           A Glimpse of Last Year's Talents
         </h2>
-        <p className="text-center text-purple-200 mb-12">
+        <p className="text-center text-purple-200 mb-12 leading-tight pb-2">
           Witness the creativity and energy from our amazing participants of last year!
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -332,6 +340,7 @@ const DesignAThon = () => {
               className="bg-gradient-to-br from-purple-800 to-pink-800 rounded-2xl p-4 shadow-lg flex flex-col items-center"
             >
               <img src={imgSrc} alt={`Participant ${index + 1}`} className="rounded-xl mb-4 w-full h-48 object-cover" />
+
             </motion.div>
           ))}
         </div>
@@ -346,34 +355,14 @@ const DesignAThon = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight pb-2">
             Ready to Create Magic?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-300 mb-8 leading-tight pb-2">
             Join the design revolution and showcase your creative genius
           </p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-gradient-to-r from-purple-500 via-pink-500 to-rose-500 hover:from-purple-600 hover:via-pink-600 hover:to-rose-600 text-white px-12 py-6 text-xl rounded-full shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-300">
-              <Pen className="mr-3 w-6 h-6" />
-              Register Now
-            </Button>
-          </motion.div>
         </motion.div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gradient-to-t from-purple-900/40 to-transparent py-12 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400 mb-4">
-            © 2025 Flash Forte 3.0 - Design-A-Thon | Where Creativity Meets Innovation
-          </p>
-          <div className="flex justify-center space-x-6">
-            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Guidelines</a>
-            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Resources</a>
-            <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">Support</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
