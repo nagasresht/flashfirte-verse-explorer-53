@@ -100,7 +100,7 @@ const DesignAThon = () => {
               repeat: Infinity,
               ease: "linear"
             }}
-           style={{
+         style={{
   left: `${Math.random() * 100}%`,
   top: `${Math.random() * 100}%`,
 }}
