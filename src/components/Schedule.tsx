@@ -14,12 +14,12 @@ const Schedule = () => {
             <ul className="space-y-4">
               <li>
                 <p className="text-lg">
-                  <span className="font-semibold text-cyan-400">Morning:</span> Idea-A-Thon (starts from 9:00 AM)
+                  <span className="font-semibold text-cyan-400">Idea-A-Thon :</span>  9:00 AM-12:00 PM
                 </p>
               </li>
               <li>
                 <p className="text-lg">
-                  <span className="font-semibold text-cyan-400">Post Lunch:</span> Speak-A-Thon (starts from 9:00 AM)
+                  <span className="font-semibold text-cyan-400">Speak-A-Thon :</span> 9:00 AM-12:00 PM
                 </p>
               </li>
             </ul>
@@ -31,12 +31,12 @@ const Schedule = () => {
             <ul className="space-y-4">
               <li>
                 <p className="text-lg">
-                  <span className="font-semibold text-cyan-400">Morning:</span> Design-A-Thon (starts from 9:00 AM)
+                  <span className="font-semibold text-cyan-400">Design-A-Thon :</span> 9:00 AM-12:00 PM
                 </p>
               </li>
               <li>
                 <p className="text-lg">
-                  <span className="font-semibold text-cyan-400">Post Lunch:</span> Game-A-Thon (starts from 9:00 AM)
+                  <span className="font-semibold text-cyan-400">Game-A-Thon :</span>  9:00 AM-12:00 PM
                 </p>
               </li>
             </ul>

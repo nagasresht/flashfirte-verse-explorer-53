@@ -87,24 +87,12 @@ const Index = () => {
   transition={{ duration: 1 }}
   className="mb-8 flex flex-col items-center"
 >
-  <div className="flex justify-center items-center gap-12 mb-8">
-  {/* VNRVJIET Logo */}
-  <div className="flex flex-col items-center group">
-    <img
-      src="/vnrlogo.png"
-      alt="VNRVJIET"
-      className="h-30 md:h-20 object-contain rounded-xl transition duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_#3b82f6]"
-    />
-  </div>
-
-  {/* CSI Logo */}
-  <div className="flex flex-col items-center group">
-    <img
-      src="/csilogo.jpg"
-      alt="CSI-VNRVJIET"
-      className="h-30 md:h-20 object-contain rounded-xl transition duration-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_#f97316]"
-    />
-  </div>
+  <div className="flex justify-center items-center mb-8">
+  <img
+    src="/new.jpg"
+    alt="Flash Forte Logo"
+    className="h-24 md:h-28 object-contain rounded-xl transition duration-500 hover:scale-105 hover:shadow-[0_0_20px_#facc15]"
+  />
 </div>
 
 </motion.div>
@@ -225,14 +213,9 @@ const Index = () => {
     </div>
 
     <p className="text-gray-400 mb-8">
-      © 2024 Flash Forte. All rights reserved. | One Event. Many Realities.
+      © 2025 Flash Forte. All rights reserved. | One Event. Many Realities.
     </p>
 
-    <div className="flex justify-center space-x-6">
-      <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Privacy</a>
-      <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Terms</a>
-      <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">Contact</a>
-    </div>
   </div>
 </footer>
 

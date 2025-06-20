@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const location = useLocation();
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -21,52 +31,83 @@ const Header = () => {
 
   return (
     <motion.header
-  initial={{ y: -100, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.8 }}
- className="fixed top-0 left-0 right-0 z-[9999] bg-white/10 backdrop-blur-md border-b border-gray-200 shadow-sm text-black"
-
-
->
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="fixed top-0 left-0 right-0 z-[9999] bg-white/10 backdrop-blur-md shadow-sm text-black"
+    >
       <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
-          {/* Logo Only */}
-          <Link to="/" className="flex items-center group">
+          {/* Updated: Logos instead of Flash Forte */}
+          <div className="flex items-center gap-4">
             <img
-              src="/new.jpg"
-              alt="Flash Forte Logo"
-              className="w-100 h-16 rounded-md object-contain"
+              src="/vnrlogo.png"
+              alt="VNRVJIET"
+              className="h-12 md:h-14 object-contain rounded-sm transition duration-300 group-hover:scale-105"
             />
-          </Link>
+            <img
+              src="/csilogo.png"
+              alt="CSI-VNRVJIET"
+              className="h-12 md:h-14 object-contain rounded-sm transition duration-300 group-hover:scale-105"
+            />
+          </div>
 
-          {/* Desktop Navigation */}
+          {/* Navigation */}
           <nav className="hidden lg:flex items-center space-x-3">
-           {navItems.map((item) =>
-  item.name === "Register" ? (
-    <div key={item.name} className="relative group">
-      <button
-        className="px-4 py-2 rounded-full text-sm font-semibold bg-yellow-500 text-black hover:bg-yellow-400"
-      >
-        Register
-      </button>
-      <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 min-w-[200px] bg-black border border-gray-700 rounded-md z-50 hidden group-hover:flex flex-col shadow-xl">
-        <Link to="/ideathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Idea-a-thon</Link>
-        <Link to="/gamingverse" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Game-a-thon</Link>
-        <Link to="/design-realm" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Design-a-thon</Link>
-        <Link to="/speakathon" className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black">Speak-a-thon</Link>
+  {navItems.map((item) =>
+    item.name === "Register" ? (
+      <div key={item.name} className="relative" ref={dropdownRef}>
+        <button
+          onClick={() => setShowDropdown(!showDropdown)}
+          className="px-4 py-2 rounded-full text-sm font-semibold bg-yellow-500 text-black hover:bg-yellow-400 transition"
+        >
+          Register
+        </button>
+        {showDropdown && (
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 min-w-[200px] bg-black border border-gray-700 rounded-md z-50 flex flex-col shadow-xl transition-all duration-200">
+            <Link
+              to="/ideaathon"
+              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+              onClick={() => setShowDropdown(false)}
+            >
+              Idea-a-thon
+            </Link>
+            <Link
+              to="/gamingverse"
+              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+              onClick={() => setShowDropdown(false)}
+            >
+              Game-a-thon
+            </Link>
+            <Link
+              to="/design-realm"
+              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+              onClick={() => setShowDropdown(false)}
+            >
+              Design-a-thon
+            </Link>
+            <Link
+              to="/speakathon"
+              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+              onClick={() => setShowDropdown(false)}
+            >
+              Speak-a-thon
+            </Link>
+          </div>
+        )}
       </div>
-    </div>
-  ) : (
-    <Link
-      key={item.name}
-      to={item.path}
-      className="px-4 py-2 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300"
-    >
-      {item.name}
-    </Link>
-  )
-)}
+    ) : (
+      <Link
+        key={item.name}
+        to={item.path}
+        className="px-4 py-2 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-pink-100 hover:text-black transition-all duration-300"
+      >
+        {item.name}
+      </Link>
+    )
+  )}
 </nav>
+
 
           {/* Mobile Menu Button */}
           <Button
@@ -78,72 +119,6 @@ const Header = () => {
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </Button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden mt-4 py-4 border-t border-gray-800"
-          >
-            <nav className="flex flex-col space-y-2">
-              <nav className="hidden lg:flex items-center space-x-3">
-  {navItems.map((item) =>
-    item.name === "Register" ? (
-      <div
-        key={item.name}
-        className="relative"
-        onMouseEnter={() => setShowDropdown(true)}
-        onMouseLeave={() => setShowDropdown(false)}
-      >
-        <button className="px-4 py-2 rounded-full text-sm font-semibold bg-yellow-500 text-black hover:bg-yellow-400">
-          Register
-        </button>
-        {showDropdown && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 min-w-[200px] bg-black border border-gray-700 rounded-md z-50 flex flex-col shadow-xl">
-            <Link
-              to="/register/ideathon"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-            >
-              Idea-a-thon
-            </Link>
-            <Link
-              to="/register/gameathon"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-            >
-              Game-a-thon
-            </Link>
-            <Link
-              to="/register/designathon"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-            >
-              Design-a-thon
-            </Link>
-            <Link
-              to="/register/speakathon"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-            >
-              Speak-a-thon
-            </Link>
-          </div>
-        )}
-      </div>
-    ) : (
-      <Link
-        key={item.name}
-        to={item.path}
-        className="px-4 py-2 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-yellow-500 hover:text-black transition-all duration-300"
-      >
-        {item.name}
-      </Link>
-    )
-  )}
-</nav>
-
-            </nav>
-          </motion.div>
-        )}
       </div>
     </motion.header>
   );
