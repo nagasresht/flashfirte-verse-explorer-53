@@ -22,7 +22,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Idea-a-Thon", path: "/ideaathon" },
+    { name: "Idea-a-Thon", path: "/ideathon" },
     { name: "Game-a-Thon", path: "/gamingverse" },
     { name: "Speak-a-Thon", path: "/speakathon" },
     { name: "Design-a-Thon", path: "/design-realm" },
