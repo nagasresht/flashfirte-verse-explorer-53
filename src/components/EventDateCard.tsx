@@ -11,7 +11,7 @@ const EventDateCard = () => {
   const daysToGo = Math.max(0, Math.floor(timeDiff / (1000 * 60 * 60 * 24)));
 
   return (
-    <div className="bg-zinc-900 text-white p-6 rounded-xl shadow-lg border border-yellow-600 max-w-sm mx-auto mt-24 md:mt-32 lg:mt-36">
+    <div className="bg-zinc-900 text-white p-4   rounded-xl shadow-lg border border-yellow-600 max-w-sm mx-auto mt-32 md:mt-40 lg:mt-44">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-yellow-400 text-lg font-semibold">JUNE 2025</h3>
         <CalendarDays className="text-yellow-400 w-6 h-6" />

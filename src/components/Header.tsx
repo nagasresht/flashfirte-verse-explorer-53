@@ -22,10 +22,10 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Idea-a-Thon", path: "/ideathon" },
-    { name: "Game-a-Thon", path: "/gamingverse" },
-    { name: "Speak-a-Thon", path: "/speakathon" },
-    { name: "Design-a-Thon", path: "/design-realm" },
+    { name: "Idea-A-Thon", path: "/ideathon" },
+    { name: "Game-A-Thon", path: "/gamingverse" },
+    { name: "Speak-A-Thon", path: "/speakathon" },
+    { name: "Design-A-Thon", path: "/design-realm" },
     { name: "Register", path: "/register" },
   ];
 
@@ -74,28 +74,28 @@ const Header = () => {
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
-                        Idea-a-thon
+                        Idea-A-Thon
                       </Link>
                       <Link
                         to="/gamingverse"
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
-                        Game-a-thon
+                        Game-A-Thon
                       </Link>
                       <Link
                         to="/design-realm"
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
-                        Design-a-thon
+                        Design-A-Thon
                       </Link>
                       <Link
                         to="/speakathon"
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
-                        Speak-a-thon
+                        Speak-A-Thon
                       </Link>
                     </div>
                   )}
@@ -114,13 +114,67 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden text-white hover:bg-gray-800"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+  variant="ghost"
+  size="icon"
+  className="lg:hidden text-black hover:bg-gray-400  bg-white shadow-md z-[10000]"
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+>
+  {isMenuOpen ? <X /> : <Menu />}
+</Button>
+
+{/* Mobile Dropdown Menu */}
+{/* Mobile Dropdown Menu */}
+{isMenuOpen && (
+<div className="absolute top-full right-4 mt-2 w-44 bg-white/80 backdrop-blur-md shadow-md text-black px-2 py-2 space-y-1 rounded-lg z-[9998]">
+
+
+    {navItems.map((item) =>
+      item.name === "Register" ? (
+        <div key={item.name} className="relative" ref={dropdownRef}>
+          <button
+            onClick={() => setShowDropdown(!showDropdown)}
+            className="w-full text-left px-4 py-2 rounded-md font-semibold bg-yellow-500 text-black hover:bg-yellow-400 transition"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </Button>
+            Register
+          </button>
+          {showDropdown && (
+            <div className="absolute top-full left-0 mt-2 w-60 bg-black border border-gray-700 rounded-md shadow-xl z-[9999]">
+              {[
+                { name: "Idea-A-Thon", path: "/ideathon" },
+                { name: "Game-A-Thon", path: "/gamingverse" },
+                { name: "Design-A-Thon", path: "/design-realm" },
+                { name: "Speak-A-Thon", path: "/speakathon" },
+              ].map(({ name, path }) => (
+                <Link
+                  key={name}
+                  to={path}
+                  className="block px-4 py-2 text-white hover:bg-yellow-500 hover:text-black"
+                  onClick={() => {
+                    setShowDropdown(false);
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {name}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <Link
+          key={item.name}
+          to={item.path}
+          className="block px-4 py-2 rounded-md font-medium bg-zinc-900 text-white hover:bg-pink-100 hover:text-black transition"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {item.name}
+        </Link>
+      )
+    )}
+  </div>
+)}
+
+
         </div>
       </div>
     </motion.header>
