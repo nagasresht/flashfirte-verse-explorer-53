@@ -116,7 +116,7 @@ const Header = () => {
           <Button
   variant="ghost"
   size="icon"
-  className="lg:hidden text-black hover:bg-gray-400  bg-white shadow-md z-[10000]"
+  className="lg:hidden text-black hover:bg-gray-400  bg-white/50 shadow-md z-[10000]"
   onClick={() => setIsMenuOpen(!isMenuOpen)}
 >
   {isMenuOpen ? <X /> : <Menu />}

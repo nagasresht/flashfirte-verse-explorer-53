@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
-import { Computer, Lightbulb, Sparkles, Trophy } from "lucide-react";
+import { Computer, Lightbulb, Sparkles, Trophy, ClipboardPen } from "lucide-react";
 import "../ideathon.css";
 
 // Custom hook for scroll animations
@@ -166,24 +166,22 @@ const HeroSection = () => {
     <section 
       ref={heroRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden py-6"
-    >
-      <div className="relative z-10 text-center px-8 max-w-5xl mx-auto w-full">        
-        <div 
+    >      <div className="relative z-10 text-center px-8 max-w-5xl mx-auto w-full">          <div 
           ref={titleRef}
-          className={`flex items-center justify-center mb-8 transition-all duration-1000 ${
+          className={`flex items-center justify-center mb-8 py-2 transition-all duration-1000 ${
             titleInView ? 'animate-bounce-in' : 'opacity-0 translate-y-10'
           }`}
         >
-          <Computer className="w-16 h-16 text-green-400 mr-6 animate-pulse" />  
-          <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent px-3 tracking-wide whitespace-nowrap">
+           <Lightbulb className="w-24 h-24 text-green-400 animate-pulse mx-2" />
+          <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent px-3  tracking-wide whitespace-nowrap">
             Idea-A-Thon
           </h1>
-          <Lightbulb className="w-16 h-16 text-green-400 animate-pulse" />  
+            
         </div>
 
         <p 
           ref={subtitleRef}
-          className={`text-2xl md:text-4xl font-semibold mb-6 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent px-5 tracking-wide transition-all duration-1000 ${
+          className={`text-lg md:text-2xl font-semibold mb-6 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent px-3 tracking-wide transition-all duration-1000 ${
             subtitleInView ? 'animate-fade-in animate-delay-300' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -192,7 +190,7 @@ const HeroSection = () => {
 
         <p 
           ref={descRef}
-          className={`text-xl md:text-2xl text-white mb-16 max-w-3xl mx-auto leading-relaxed px-4 tracking-normal transition-all duration-1000 ${
+          className={`text-base md:text-lg text-white mb-12 max-w-2xl mx-auto leading-relaxed px-4 tracking-normal transition-all duration-1000 ${
             descInView ? 'animate-slide-up animate-delay-500' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -201,26 +199,33 @@ const HeroSection = () => {
 
         <div 
           ref={buttonsRef}
-          className={`flex flex-col sm:flex-row gap-10 justify-center items-center transition-all duration-1000 ${
+          className={`flex flex-col sm:flex-row gap-6 justify-center items-center transition-all duration-1000 ${
             buttonsInView ? 'animate-zoom-in animate-delay-700' : 'opacity-0 scale-75'
           }`}
         >
           <Button 
             size="lg" 
-            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-12 py-7 text-xl font-semibold rounded-full transition-all duration-300 green-glow hover:green-glow-intense group shadow-md"
+            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-5 text-lg font-semibold rounded-full transition-all duration-300 green-glow hover:green-glow-intense group shadow-md"
             onClick={() => scrollToSection('domains-section')}
           >
-            <Sparkles className="w-6 h-6 mr-3 group-hover:animate-spin" />
+            <Sparkles className="w-5 h-5 mr-2 group-hover:animate-spin" />
             Start Ideating
           </Button>
           
           <Button 
             size="lg" 
             variant="outline" 
-            className="border-2 border-green-400 text-green-400 hover:bg-green-400/20 hover:text-green-300 hover:border-green-300 px-12 py-7 text-xl font-semibold rounded-full transition-all duration-300 shadow-md"
+            className="border-2 border-green-400 text-green-400 hover:bg-green-400/20 hover:text-green-300 hover:border-green-300 px-8 py-5 text-lg font-semibold rounded-full transition-all duration-300 shadow-md"
             onClick={() => scrollToSection('gallery-section')}
           >
             View Gallery
+          </Button>          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-5 text-lg font-semibold rounded-full transition-all duration-300 green-glow hover:green-glow-intense group shadow-md"
+            onClick={() => window.open('https://google.com', '_blank')}
+          >
+            <ClipboardPen className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+            Register Now
           </Button>
         </div>
       </div>
@@ -545,40 +550,7 @@ const WinnersSection = () => {
 };
 
 // Poster Section Component
-const PosterSection = () => {
-  const { ref: titleRef, isInView: titleInView } = useScrollAnimation(0.3);
-  const { ref: posterRef, isInView: posterInView } = useScrollAnimation(0.3);
 
-  return (
-    <section className="py-20 px-6 relative">
-      <div className="max-w-4xl mx-auto text-center">        
-        <h2 
-          ref={titleRef}
-          className={`text-4xl font-bold mb-12 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent px-2 tracking-wide transition-all duration-1000 ${
-            titleInView ? 'animate-bounce-in' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          Event Poster
-        </h2>
-        
-        <div 
-          ref={posterRef}
-          className={`bg-gradient-to-br from-green-500/10 to-emerald-600/10 border-2 border-green-400/30 rounded-lg p-8 backdrop-blur-sm hover:border-green-400/50 transition-all duration-700 ${
-            posterInView ? 'animate-zoom-in animate-delay-300' : 'opacity-0 scale-75'
-          }`}
-        >
-          <div className="aspect-[3/4] max-w-2xl mx-auto bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center border border-green-400/20">
-            <div className="text-center text-green-400">
-              <div className="text-6xl mb-4">🎯</div>
-              <p className="text-xl font-semibold">Idea-A-Thon Event Poster</p>
-              <p className="text-sm text-gray-400 mt-2">Poster placeholder - Coming Soon!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 // Main Index Component
 const Index = () => {
@@ -660,7 +632,7 @@ const Index = () => {
             <GallerySection />
             {/* <JurySection /> */}
             {/* <WinnersSection /> */}
-            <PosterSection />
+          
           </div>
         </div>
       )}
