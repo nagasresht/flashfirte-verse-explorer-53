@@ -558,7 +558,7 @@ const PosterSection = () => {
             titleInView ? 'animate-bounce-in' : 'opacity-0 translate-y-10'
           }`}
         >
-          Event Poster Preview
+          Event Poster
         </h2>
         
         <div 
