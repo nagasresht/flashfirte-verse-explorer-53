@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Gamepad, Brain, Map, Users, Eye, Pen, Sparkles,
-  Monitor, Star, Trophy, Quote, Keyboard, Target, Joystick, Crosshair, Crown, Shield, Zap, Headphones, Cpu, Swords, Dice1, Dice2, Dice3, Dice4, Dice5, Dice6
+  Monitor, Star, Trophy, Quote, Keyboard, Target, Joystick, 
+  Crosshair, Crown, Shield, Zap, Headphones, Cpu, Swords, 
+  Dice1, Dice2, Dice3, Dice4, Dice5, Dice6
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,7 +15,6 @@ const GameAThon = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 100]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const skillsRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -26,17 +27,6 @@ const GameAThon = () => {
   const handleViewHighlightsClick = () => {
     galleryRef.current?.scrollIntoView({ behavior: "smooth" });
   };
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX - window.innerWidth / 2) / 50,
-        y: (e.clientY - window.innerHeight / 2) / 50
-      });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
 
   const gameOverview = [
     {
@@ -118,35 +108,32 @@ const GameAThon = () => {
 
   const placeholderImages = [
     "/img1.png",
-    "/img2.jpg",
-    "/img3.jpg",
-    "/img4.jpg",
     "/img5.jpg",
     "/img6.jpg"
   ];
 
   const gamingIcons = [
-    { icon: Gamepad, animation: "float", color: "#FF5733" },
-    { icon: Joystick, animation: "pulse", color: "#FFC300" },
-    { icon: Crosshair, animation: "spin", color: "#D97706" },
-    { icon: Target, animation: "bounce", color: "#FF5733" },
-    { icon: Crown, animation: "float", color: "#FFD700" },
-    { icon: Shield, animation: "pulse", color: "#FFC300" },
-    { icon: Zap, animation: "flash", color: "#FF5733" },
-    { icon: Headphones, animation: "wiggle", color: "#D97706" },
-    { icon: Cpu, animation: "spin", color: "#FFC300" },
-    { icon: Swords, animation: "bounce", color: "#FF5733" },
-    { icon: Dice1, animation: "float", color: "#FFD700" },
-    { icon: Dice2, animation: "pulse", color: "#FFC300" },
-    { icon: Dice3, animation: "spin", color: "#D97706" },
-    { icon: Dice4, animation: "bounce", color: "#FF5733" },
-    { icon: Dice5, animation: "flash", color: "#FFC300" },
-    { icon: Dice6, animation: "wiggle", color: "#FFD700" },
+    { icon: Gamepad, animation: "float", color: "#F97316" },
+    { icon: Joystick, animation: "pulse", color: "#EA580C" },
+    { icon: Crosshair, animation: "spin", color: "#C2410C" },
+    { icon: Target, animation: "bounce", color: "#F97316" },
+    { icon: Crown, animation: "float", color: "#EAB308" },
+    { icon: Shield, animation: "pulse", color: "#EA580C" },
+    { icon: Zap, animation: "flash", color: "#F97316" },
+    { icon: Headphones, animation: "wiggle", color: "#C2410C" },
+    { icon: Cpu, animation: "spin", color: "#EA580C" },
+    { icon: Swords, animation: "bounce", color: "#F97316" },
+    { icon: Dice1, animation: "float", color: "#EAB308" },
+    { icon: Dice2, animation: "pulse", color: "#EA580C" },
+    { icon: Dice3, animation: "spin", color: "#C2410C" },
+    { icon: Dice4, animation: "bounce", color: "#F97316" },
+    { icon: Dice5, animation: "flash", color: "#EA580C" },
+    { icon: Dice6, animation: "wiggle", color: "#EAB308" },
   ];
-
+  
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-[#2f0226] via-[#9f5213] to-[#D97706] text-white overflow-x-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#2f0226] via-[#9f5213] to-[#D97706] -z-10"></div>
+     <div className="relative min-h-screen bg-gradient-to-br from-orange-900 via-amber-900 to-yellow-900 text-white overflow-x-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-900/80 via-amber-900/80 to-yellow-900/80 -z-10"></div>
       <ParticleBackground />
 
       {/* Animated Gaming Remote Background */}
@@ -167,11 +154,10 @@ const GameAThon = () => {
               ease: "easeInOut",
             }}
             style={{
-  left: `${Math.random() * 100}%`,
-  top: `${Math.random() * 100}%`,
-  fontSize: `${Math.random() * 4 + 3}rem`
-}}
-
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `calc(${Math.random() * 4 + 3}rem - 2vw)`, // Adjust font size for responsiveness
+            }}
           >
             <Gamepad />
           </motion.div>
@@ -196,11 +182,11 @@ const GameAThon = () => {
               ease: "easeInOut",
             }}
             style={{
-  left: `${Math.random() * 100}%`,
-  top: `${Math.random() * 100}%`,
-  fontSize: `${Math.random() * 4 + 3}rem`
-}}
-
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 4 + 3}rem`,
+              color: item.color,
+            }}
           >
             <item.icon />
           </motion.div>
@@ -219,12 +205,12 @@ const GameAThon = () => {
             className="mb-8"
           >
             <div className="flex items-center justify-center mb-4">
-              <Gamepad className="w-16 h-16 text-[#FFC300] mr-4" />
+              <Gamepad className="w-20 h-20  text-[#FFC300] mr-4" />
               <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-[#FF5733] via-[#FFC300] to-[#D97706] bg-clip-text text-transparent">
-                Game-A-THON
+                Game-A-Thon
               </h1>
             </div>
-            <p className="text-2xl md:text-3xl text-[#FFC300] font-light tracking-wider">
+            <p className="text-2xl md:text-3xl text-[#FFC300] font-light  tracking-wider">
               2K25
             </p>
           </motion.div>
@@ -270,9 +256,33 @@ const GameAThon = () => {
               View Highlights
             </Button>
           </motion.div>
+
+          {/* Event Date and Time */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="mt-6 text-center text-[#FFC300] font-semibold text-lg"
+          >
+            <div className="flex flex-col items-center gap-2">
+              {/* <p className="flex items-center gap-2">
+                🎮 <span className="text-white">Level Up Your Calendar!</span>
+              </p> */}
+              <p className="flex items-center gap-2">
+                🗓 <span>Date: 28 June 2025</span>
+              </p>
+              <p className="flex items-center gap-2">
+                ⌚ <span>Time: 2:00 PM – 5:00 PM</span>
+              </p>
+              {/* <p className="flex items-center gap-2">
+                🕹 <span className="text-white">Get Ready to Play!</span>
+              </p> */}
+            </div>
+          </motion.div>
         </motion.div>
 
-        {/* Floating Gaming Elements */}
+        {/* Remove Floating Gaming Elements */}
+        {/* 
         <motion.div
           style={{ x: mousePosition.x * 2, y: mousePosition.y * 2 }}
           className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-[#FFC300]/20 to-[#D97706]/20 rounded-full backdrop-blur-sm border border-[#FFC300]/30"
@@ -285,10 +295,11 @@ const GameAThon = () => {
           style={{ x: mousePosition.x * 1, y: mousePosition.y * 1 }}
           className="absolute top-1/2 right-20 w-12 h-12 bg-gradient-to-br from-[#FF5733]/20 to-[#FFC300]/20 rounded-full backdrop-blur-sm border border-[#FFC300]/30"
         />
+        */}
       </section>
 
       {/* Event Overview Section */}
-      <section id="overview" className="py-20 px-4">
+      <section id="overview" className="py-20 px-4 mt-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -296,10 +307,10 @@ const GameAThon = () => {
           viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
             Game-a-thon 2K25
           </h2>
-          <p className="text-center text-gray-300 mb-8 text-lg max-w-4xl mx-auto">
+          <p className="text-center text-amber-100 mb-8 text-lg max-w-4xl mx-auto">
             Brought out the best in gaming enthusiasts. Participants demonstrated sharp memory, critical thinking, 
             and teamwork through an engaging 5-round format conducted via Discord. It celebrated not just gaming 
             skill but also strategy, speed, and spontaneity.
@@ -316,16 +327,16 @@ const GameAThon = () => {
                 whileHover={{ scale: 1.05, y: -10 }}
                 className="group cursor-pointer"
               >
-                <Card className="bg-gradient-to-br from-[#2f0226]/80 to-[#9f5213]/60 backdrop-blur-md border-[#FFC300]/20 hover:border-[#FFC300]/40 transition-all duration-300 h-full"> <CardContent className="p-6 text-center">
-                    <div
-  className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:rotate-12 transition-transform duration-300`}
->
-
+                <Card className="bg-gradient-to-br from-orange-900/80 to-amber-900/80 backdrop-blur-md border-amber-400/20 hover:border-amber-400/40 transition-all duration-300 h-full">
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center group-hover:rotate-12 transition-transform duration-300`}>
+                      {item.icon}
                     </div>
-                    <h3 className="text-xl font-bold mb-2 text-white group-hover:text-[#FFC300] transition-colors">
+                    <h3 className="text-xl font-bold mb-2 text-white group-hover:text-amber-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 group-hover:text-[#FFC300] transition-colors"> {item.description}
+                    <p className="text-amber-100 group-hover:text-amber-300 transition-colors">
+                      {item.description}
                     </p>
                   </CardContent>
                 </Card>
@@ -344,7 +355,7 @@ const GameAThon = () => {
           viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pb-2 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent">
             Rounds Breakdown
           </h2>
           <p className="text-center text-gray-400 mb-16 text-lg">
@@ -359,23 +370,65 @@ const GameAThon = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="group cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                className="group cursor-pointer h-full flex"
               >
-                <Card className="bg-gradient-to-br from-[#431800]/50 to-[#8B3E00]/50 backdrop-blur-md border border-[#FFC300]/30 hover:border-[#FFC300]/40 transition-all duration-300 h-full">
-                  <CardContent className="p-6">
+                <Card
+                  style={{
+                    background: "rgba(0, 0, 255, 0.06)",
+                    backdropFilter: "blur(10px)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: 16,
+                    padding: 20,
+                    boxShadow: "0 4px 20px rgba(255, 165, 0, 0.15)",
+                    minHeight: 320, // Ensures all boxes have the same minimum height
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    height: "100%"
+                  }}
+                  className="transition-all duration-200 h-full flex flex-col"
+                >
+                  <CardContent className="p-0 flex flex-col h-full">
                     <div className="flex items-center mb-4">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${round.color} flex items-center justify-center mr-4`}>
+                      <div
+                        className={`w-12 h-12 rounded-full bg-gradient-to-r ${round.color} flex items-center justify-center mr-4`}
+                        style={{
+                          boxShadow: "0 0 10px rgba(255, 150, 50, 0.6)",
+                        }}
+                      >
                         <span className="text-white font-bold">{round.number}</span>
                       </div>
-                      <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${round.color} flex items-center justify-center group-hover:rotate-12 transition-transform duration-300`}>
+                      <div
+                        className={`w-10 h-10 rounded-full bg-gradient-to-r ${round.color} flex items-center justify-center group-hover:rotate-12 transition-transform duration-200`}
+                        style={{
+                          color: "#FFC300",
+                          transition: "transform 0.2s ease-in-out"
+                        }}
+                      >
                         {round.icon}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#FFC300] transition-colors">
+                    <h3
+                      style={{
+                        color: "#FFD166",
+                        fontWeight: 700,
+                        textShadow: "0 0 8px rgba(255, 209, 102, 0.6)"
+                      }}
+                      className="text-xl font-bold mb-3"
+                    >
                       {round.title}
                     </h3>
-                    <p className="text-gray-300 group-hover:text-gray-200 transition-colors leading-relaxed">
+                    <p
+                      style={{
+                        color: "#E0E0E0",
+                        fontSize: "16px",
+                        lineHeight: "1.5em",
+                        fontWeight: 500,
+                        textShadow: "0 0 4px rgba(255,255,255,0.1)"
+                      }}
+                      className="transition-colors"
+                    >
                       {round.description}
                     </p>
                   </CardContent>
@@ -385,8 +438,6 @@ const GameAThon = () => {
           </div>
         </motion.div>
       </section>
-
-      
 
       {/* Outcome Quote Section */}
       <section className="py-20 px-4">
@@ -411,7 +462,7 @@ const GameAThon = () => {
       </section>
 
       {/* Skills Section */}
-      <section ref={skillsRef} className="py-20 px-4 bg-gradient-to-r from-[#431800]/20 to-[#8B3E00]/20 pb-0">
+      <section ref={skillsRef} className="pt-[220px] py-15 px-4 bg-gradient-to-r from-[#431800]/20 to-[#8B3E00]/20">
         <motion.div
           style={{ y: y2 }}
           className="max-w-6xl mx-auto text-center"
@@ -421,7 +472,7 @@ const GameAThon = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent"
+            className="text-3xl md:text-4xl font-bold mb-4 pb-2 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent"
           >
             Gaming Skills & Tools
           </motion.h2>
@@ -456,7 +507,7 @@ const GameAThon = () => {
 
       {/* Gallery Section */}
       <section ref={galleryRef} id="gallery" className="text-white py-16 px-4 lg:px-32 pt-0">
-        <h2 className="text-4xl font-bold text-center mb-4 mt-3">
+        <h2 className="text-4xl font-bold text-center mb-4 mt-5 pb-2">
         A Glimpse of Last Year's Talents
         </h2>
         <p className="text-center text-[#FFC300] mb-12">
@@ -470,7 +521,11 @@ const GameAThon = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-br from-[#431800] to-[#8B3E00] rounded-2xl p-4 shadow-lg flex flex-col items-center"
             >
-              <img src={imgSrc} alt={`Gaming moment ${index + 1}`} className="rounded-xl mb-4 w-full h-48 object-cover" />
+              <img
+                src={imgSrc}
+                alt={`Gaming moment ${index + 1}`}
+                className="rounded-xl mb-4 w-full h-48 object-cover"
+              />
             </motion.div>
           ))}
         </div>
@@ -478,6 +533,7 @@ const GameAThon = () => {
 
 
       {/* Results Section */}
+      {/* 
       <section id="results" className="py-20 px-4 bg-gradient-to-r from-[#431800]/30 to-[#8B3E00]/30">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -537,6 +593,7 @@ const GameAThon = () => {
           </div>
         </motion.div>
       </section>
+      */}
 
 
       {/* Call to Action */}
@@ -548,7 +605,7 @@ const GameAThon = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#FF5733] via-[#FFC300] to-[#D97706] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 pb-2 bg-gradient-to-r from-[#FF5733] via-[#FFC300] to-[#D97706] bg-clip-text text-transparent">
             Ready to Game?
           </h2>
           <p className="text-xl text-gray-300 mb-8">

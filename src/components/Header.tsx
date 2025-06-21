@@ -38,76 +38,79 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
-          {/* Updated: Logos instead of Flash Forte */}
+          {/* Logos with Links */}
           <div className="flex items-center gap-4">
-            <img
-              src="/vnrlogo.png"
-              alt="VNRVJIET"
-              className="h-12 md:h-14 object-contain rounded-sm transition duration-300 group-hover:scale-105"
-            />
-            <img
-              src="/csilogo.png"
-              alt="CSI-VNRVJIET"
-              className="h-12 md:h-14 object-contain rounded-sm transition duration-300 group-hover:scale-105"
-            />
+            <a href="https://vnrvjiet.ac.in" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/vnrlogo.png"
+                alt="VNRVJIET"
+                className="h-12 md:h-14 object-contain rounded-sm transition duration-300 hover:scale-105"
+              />
+            </a>
+            <a href="https://www.vnrvjietcsi.com" target="_blank" rel="noopener noreferrer">
+              <img
+                src="/csilogo.png"
+                alt="CSI-VNRVJIET"
+                className="h-12 md:h- object-contain rounded-sm transition duration-300 hover:scale-105"
+              />
+            </a>
           </div>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-3">
-  {navItems.map((item) =>
-    item.name === "Register" ? (
-      <div key={item.name} className="relative" ref={dropdownRef}>
-        <button
-          onClick={() => setShowDropdown(!showDropdown)}
-          className="px-4 py-2 rounded-full text-sm font-semibold bg-yellow-500 text-black hover:bg-yellow-400 transition"
-        >
-          Register
-        </button>
-        {showDropdown && (
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 min-w-[200px] bg-black border border-gray-700 rounded-md z-50 flex flex-col shadow-xl transition-all duration-200">
-            <Link
-              to="/ideaathon"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-              onClick={() => setShowDropdown(false)}
-            >
-              Idea-a-thon
-            </Link>
-            <Link
-              to="/gamingverse"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-              onClick={() => setShowDropdown(false)}
-            >
-              Game-a-thon
-            </Link>
-            <Link
-              to="/design-realm"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-              onClick={() => setShowDropdown(false)}
-            >
-              Design-a-thon
-            </Link>
-            <Link
-              to="/speakathon"
-              className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
-              onClick={() => setShowDropdown(false)}
-            >
-              Speak-a-thon
-            </Link>
-          </div>
-        )}
-      </div>
-    ) : (
-      <Link
-        key={item.name}
-        to={item.path}
-        className="px-4 py-2 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-pink-100 hover:text-black transition-all duration-300"
-      >
-        {item.name}
-      </Link>
-    )
-  )}
-</nav>
-
+            {navItems.map((item) =>
+              item.name === "Register" ? (
+                <div key={item.name} className="relative" ref={dropdownRef}>
+                  <button
+                    onClick={() => setShowDropdown(!showDropdown)}
+                    className="px-4 py-2 rounded-full text-sm font-semibold bg-yellow-500 text-black hover:bg-yellow-400 transition"
+                  >
+                    Register
+                  </button>
+                  {showDropdown && (
+                    <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 min-w-[200px] bg-black border border-gray-700 rounded-md z-50 flex flex-col shadow-xl transition-all duration-200">
+                      <Link
+                        to="/ideathon"
+                        className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+                        onClick={() => setShowDropdown(false)}
+                      >
+                        Idea-a-thon
+                      </Link>
+                      <Link
+                        to="/gamingverse"
+                        className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+                        onClick={() => setShowDropdown(false)}
+                      >
+                        Game-a-thon
+                      </Link>
+                      <Link
+                        to="/design-realm"
+                        className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+                        onClick={() => setShowDropdown(false)}
+                      >
+                        Design-a-thon
+                      </Link>
+                      <Link
+                        to="/speakathon"
+                        className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
+                        onClick={() => setShowDropdown(false)}
+                      >
+                        Speak-a-thon
+                      </Link>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="px-4 py-2 rounded-full text-sm font-semibold bg-zinc-900 text-white hover:bg-pink-100 hover:text-black transition-all duration-300"
+                >
+                  {item.name}
+                </Link>
+              )
+            )}
+          </nav>
 
           {/* Mobile Menu Button */}
           <Button
