@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -243,14 +242,16 @@ const JourneySection = () => {
   const rounds = [
     {
       title: "Round 1: Theme Reveal",
-      description: "Participants will receive a problem statement. Submissions should include a brief explanation and a conceptual solution.",
+      description: "Choose any one domain and submit your PPT using the template provided in the Google Form.",
+      deadline: "⏳ Submission Deadline: 26th June, 12 PM",
       gradient: "from-gray-800/80 to-gray-900/80",
       ref: card1Ref,
       inView: card1InView
     },
     {
       title: "Round 2: Final Presentation", 
-      description: "Shortlisted teams will pitch their refined ideas to the jury, showcasing impact, innovation, and feasibility.",
+      description: "Shortlisted participants will present their ideas live to the judges (Online), using the submitted PPT. Showcase your impact, innovation, and feasibility — the most compelling presentations win!",
+      deadline: "",
       gradient: "from-gray-800/80 to-gray-900/80",
       ref: card2Ref,
       inView: card2InView
@@ -290,9 +291,14 @@ const JourneySection = () => {
                 <h3 className="text-2xl font-bold text-green-400 mb-4 group-hover:text-green-300 transition-colors">
                   {round.title}
                 </h3>
-                <p className="text-gray-100 leading-relaxed text-base">
+                <p className="text-gray-100 leading-relaxed text-base mb-4">
                   {round.description}
                 </p>
+                {round.deadline && (
+                  <p className="text-white font-bold text-base">
+                    {round.deadline}
+                  </p>
+                )}
               </CardContent>
             </Card>
           ))}
@@ -311,9 +317,9 @@ const DomainsSection = () => {
     { name: "Education", color: "bg-blue-500", icon: "🎓" },
     { name: "Health Care", color: "bg-red-500", icon: "🏥" },
     { name: "Smart Agriculture", color: "bg-green-500", icon: "🌱" },
-    { name: "Sustainability", color: "bg-emerald-500", icon: "♻️" },
+    { name: "Gaming for Impact", color: "bg-emerald-500", icon: "🎮" },
     { name: "Campus Automation", color: "bg-purple-500", icon: "🏫" },
-    { name: "Technology", color: "bg-orange-500", icon: "💻" }
+    { name: "Smart Cities", color: "bg-orange-500", icon: "🏙️" }
   ];
 
   return (
@@ -550,7 +556,43 @@ const WinnersSection = () => {
 };
 
 // Poster Section Component
+const PosterSection = () => {
+  const { ref: titleRef, isInView: titleInView } = useScrollAnimation(0.3);
+  const { ref: posterRef, isInView: posterInView } = useScrollAnimation(0.3);
 
+  return (
+    <section className="py-20 px-6 relative">
+      <div className="max-w-4xl mx-auto text-center">        
+        <h2 
+          ref={titleRef}
+          className={`text-4xl font-bold mb-12 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent px-2 tracking-wide transition-all duration-1000 ${
+            titleInView ? 'animate-bounce-in' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          Event Poster
+        </h2>
+        
+        <div 
+          ref={posterRef}
+          className={`bg-gradient-to-br from-green-500/10 to-emerald-600/10 border-2 border-green-400/30 rounded-lg p-8 backdrop-blur-sm hover:border-green-400/50 transition-all duration-700 group hover:scale-105 ${
+            posterInView ? 'animate-zoom-in animate-delay-300' : 'opacity-0 scale-75'
+          }`}
+        >
+          <div className="aspect-[2/3] max-w-2xl mx-auto rounded-lg overflow-hidden border border-green-400/20 group-hover:border-green-400/40 transition-all duration-300">
+            <img 
+              src="/Ideathonposter.webp" 
+              alt="Idea-A-Thon Event Poster" 
+              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 bg-gray-900"
+              onError={(e) => {
+                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDQwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMUYyOTM3Ii8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMTBCOTgxIiBmb250LXNpemU9IjQ4Ij7wn4evPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjM0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwQjk4MSIgZm9udC1zaXplPSIyNCI+SWRlYS1BLVRob248L3RleHQ+Cjx0ZXh0IHg9IjIwMCIgeT0iMzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg5IiBmb250LXNpemU9IjE2Ij5FdmVudCBQb3N0ZXI8L3RleHQ+Cjwvc3ZnPgo=';
+              }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 // Main Index Component
 const Index = () => {
@@ -632,7 +674,7 @@ const Index = () => {
             <GallerySection />
             {/* <JurySection /> */}
             {/* <WinnersSection /> */}
-          
+            <PosterSection />
           </div>
         </div>
       )}
