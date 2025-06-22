@@ -245,31 +245,6 @@ const SpeakAThon = () => {
       </section>
 <br></br><br></br>
       {/* Event Details */}
-<section className="py-16 px-4 md:px-6">
-  <div className="max-w-xl mx-auto bg-gray-800/60 border border-sky-500/30 rounded-2xl p-8 md:p-10 text-white shadow-xl">
-    <h2 className="text-4xl md:text-5xl font-bold text-sky-400 mb-10 flex justify-center items-center gap-3">
-       Event Details
-    </h2>
-
-    <div className="space-y-4 text-xl md:text-2xl flex flex-col items-center">
-      <div className="flex items-center gap-2">
-        <span className="text-2xl">📅</span>
-        <span className="font-bold">Date :</span>
-        <span>28 June 2025</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <span className="text-2xl">⏰</span>
-        <span className="font-bold">Time :</span>
-        <span>09:00 am – 12:00 pm</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <span className="text-2xl">💻</span>
-        <span className="font-bold">Mode :</span>
-        <span>Online</span>
-      </div>
-    </div>
-  </div>
-</section>
 {/* About the event */}
 <section className="py-16 px-4 md:px-6">
   <div className="max-w-4xl mx-auto bg-gray-800/60 border border-sky-500/30 rounded-2xl p-8 md:p-10 text-white shadow-xl">

@@ -44,7 +44,7 @@ const Header = () => {
               <img
                 src="/vnrlogo.png"
                 alt="VNRVJIET"
-                className="h-12 md:h-14 object-contain rounded-sm transition duration-300 hover:scale-105"
+                className="h-12 md:h-12 object-contain rounded-sm transition duration-300 hover:scale-105"
               />
             </a>
             <a href="https://www.vnrvjietcsi.com" target="_blank" rel="noopener noreferrer">
