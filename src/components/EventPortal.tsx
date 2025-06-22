@@ -48,7 +48,6 @@ const EventPortal = ({
                 {title}
               </h3>
 
-              <p className="text-gray-400 mb-3 font-medium">{subtitle}</p>
               <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
             </div>
 
