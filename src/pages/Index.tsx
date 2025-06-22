@@ -90,7 +90,7 @@ const Index = () => {
 >
   <div className="flex justify-center items-center mb-8">
   <img
-    src="/new.jpg"
+    src="/new.png"
     alt="Flash Forte Logo"
     className="h-24 md:h-28 object-contain rounded-xl transition duration-500 hover:scale-105 hover:shadow-[0_0_20px_#facc15]"
   />
@@ -109,7 +109,7 @@ const Index = () => {
           >
             <div className="flex items-end justify-center gap-4">
               <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
-                Flash Forte
+                FlashForte
               </h1>
               <span className="text-3xl md:text-4xl font-bold text-gray-400 mb-2">3.0</span>
             </div>
@@ -208,14 +208,14 @@ const Index = () => {
   <div className="max-w-6xl mx-auto text-center">
     <div className="flex items-center justify-center mb-8 space-x-3">
       <img
-        src="/new.jpg"
+        src="/new.png"
         alt="Flash Forte Logo"
         className="w-50 h-24 object-contain"
       />
     </div>
 
     <p className="text-gray-400 mb-8">
-      © 2025 Flash Forte. All rights reserved. | One Event. Many Realities.
+      © 2025 FlashForte. All rights reserved. | One Event. Many Realities.
     </p>
 
   </div>
