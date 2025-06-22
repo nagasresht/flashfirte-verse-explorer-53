@@ -154,8 +154,8 @@ const GameAThon = () => {
               ease: "easeInOut",
             }}
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left:` ${Math.random() * 100}%`,
+              top:` ${Math.random() * 100}%`,
               fontSize: `${Math.random() * 4 + 3}rem`,
               color: item.color,
             }}
@@ -168,7 +168,7 @@ const GameAThon = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 sm:px-10 md:px-20 pt-24 text-center">
+      <section className="relative min-h-screen flex items-center justify-center px-6 sm:px-10 md:px-20 pt-12 text-center">
         <motion.div style={{ y: y1 }} className="z-10 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -177,21 +177,19 @@ const GameAThon = () => {
             className="mb-8"
           >
             <div className="flex flex-col sm:flex-row items-center justify-center mb-4 gap-3">
-              <Gamepad className="w-16 h-16 sm:w-20 sm:h-20 text-[#FFC300]" />
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#FF5733] via-[#FFC300] to-[#D97706] bg-clip-text text-transparent">
+              <Gamepad className="w-20 h-20 sm:w-24 sm:h-24 text-[#FFC300]" />
+              <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold bg-gradient-to-r from-[#FF4500] via-[#f3c315] to-[#FFA500] bg-clip-text text-transparent">
                 Game-A-Thon
               </h1>
             </div>
-            <p className="text-2xl md:text-3xl text-[#FFC300] font-light tracking-wider">
-              2K25
-            </p>
+            
           </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-lg sm:text-xl text-gray-300 mb-2 leading-relaxed"
+            className="text-xl sm:text-2xl text-[#FF5733] mb-4 leading-relaxed font-semibold"
           >
             Where Strategy Meets Skill
           </motion.p>
@@ -199,10 +197,9 @@ const GameAThon = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="text-md text-gray-400 mb-8 leading-relaxed"
+            className="text-lg sm:text-xl text-gray-200 mb-10 leading-relaxed"
           >
-            A thrilling gaming tournament designed to challenge your memory,
-            strategy, logic, and reflexes. Compete with fellow gamers and rise to the top.
+            A thrilling gaming tournament designed to challenge your memory, strategy, logic, and reflexes. Compete with fellow gamers and rise to the top.
           </motion.p>
 
           <motion.div
@@ -212,25 +209,54 @@ const GameAThon = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button
-              onClick={() => window.open("https://forms.gle/U9dyzPfkThYyWfMa8", "_blank")}
+              onClick={() => skillsRef.current?.scrollIntoView({ behavior: "smooth" })}
               className="bg-gradient-to-r from-[#FF5733] to-[#FFC300] hover:from-[#D97706] hover:to-[#FF5733] text-white px-8 py-4 text-lg rounded-full shadow-lg hover:scale-105 transition-all duration-300"
             >
-              <Sparkles className="mr-2 w-5 h-5" />
-              Register Now
+              <Dice5 className="mr-2 w-5 h-5" />
+              Start Gaming
             </Button>
             <Button
-              onClick={handleViewHighlightsClick}
+              onClick={() => window.open("https://forms.gle/5d8VaPR9iqwMbt487", "_blank")}
               variant="outline"
               className="border-[#FFC300] text-[#FFC300] hover:bg-[#FFC300] hover:text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
             >
               <Monitor className="mr-2 w-5 h-5" />
+              Register Now
+            </Button>
+            <Button
+              onClick={handleViewHighlightsClick}
+              className="bg-gradient-to-r from-[#FF5733] to-[#FFC300] hover:from-[#D97706] hover:to-[#FF5733] text-white px-8 py-4 text-lg rounded-full shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              <Sparkles className="mr-2 w-5 h-5" />
               View Highlights
             </Button>
           </motion.div>
         </motion.div>
       </section>
+
+      <section className="py-20 px-6 sm:px-10 md:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto text-center"
+        >
+          <Card className="mb-6 bg-gradient-to-br from-[#FFD700]/20 to-[#FFC300]/20 backdrop-blur-md border border-[#FFC300]/40">
+            <CardContent className="p-10 sm:p-12">
+              <Quote className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-6 text-[#FFC300]" />
+              <blockquote className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed italic">
+                "Brought out the best in gaming enthusiasts. Participants demonstrated sharp memory, critical thinking, 
+            and teamwork through an engaging 5-round format conducted via Discord. It celebrated not just gaming 
+            skill but also strategy, speed, and spontaneity."
+              </blockquote>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </section>
+
             {/* Event Overview Section */}
-      <section id="overview" className="py-20 px-6 sm:px-8 md:px-16 ">
+      <section id="overview" className="py-20 px-6 sm:px-8 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -238,15 +264,12 @@ const GameAThon = () => {
           viewport={{ once: true }}
           className="max-w-7xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">
-            Game-a-thon 2K25
+          <h2 className="text-4xl pb-2 md:text-5xl font-bold text-center mb-6 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            Gaming Arena 
           </h2>
-          <p className="text-center text-amber-100 mb-8 text-lg max-w-3xl mx-auto">
-            Brought out the best in gaming enthusiasts. Participants demonstrated sharp memory, critical thinking, 
-            and teamwork through an engaging 5-round format conducted via Discord. It celebrated not just gaming 
-            skill but also strategy, speed, and spontaneity.
+          <p className="text-center text-gray-300 mb-8 text-lg max-w-3xl mx-auto">
+            Dive into the exciting challenges and activities of Game-A-Thon 2K25.
           </p>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {gameOverview.map((item, index) => (
               <motion.div
@@ -289,7 +312,7 @@ const GameAThon = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pb-2 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent">
             Rounds Breakdown
           </h2>
-          <p className="text-center text-gray-400 mb-12 text-lg">
+          <p className="text-center text-white-400 mb-12 text-lg">
             Your gaming journey through 5 exciting rounds
           </p>
 
@@ -323,28 +346,7 @@ const GameAThon = () => {
           </div>
         </motion.div>
       </section>
-    
-          {/* Outcome Quote Section */}
-      <section className="py-20 px-6 sm:px-10 md:px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <Card className="mb-6 bg-gradient-to-br from-[#FFD700]/20 to-[#FFC300]/20 backdrop-blur-md border border-[#FFC300]/40">
-            <CardContent className="p-10 sm:p-12">
-              <Quote className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-6 text-[#FFC300]" />
-              <blockquote className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed italic">
-                "Game-a-thon 2K25 proved to be an electrifying mix of strategy, skill, and excitement. 
-                From puzzles to drawing games, students showed remarkable adaptability and creativity. 
-                It not only fostered fun but built a stronger sense of community among the first years."
-              </blockquote>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </section>
+      
 
     {/* Skills Section */}
 <section
@@ -360,7 +362,7 @@ const GameAThon = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="text-3xl md:text-4xl font-bold mb-4 pb-2 mt-20 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent"
+      className="text-3xl md:text-4xl font-bold mb-4 pb-2 mt-32 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent"
     >
       Gaming Skills & Tools
     </motion.h2>
@@ -448,4 +450,3 @@ const GameAThon = () => {
 };
 
 export default GameAThon;
-

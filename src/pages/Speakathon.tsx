@@ -56,10 +56,10 @@ const SpeakAThon = () => {
   ];
 
   const galleryImages = [
-    "/s1.jpg",
-    "/s2.jpg",
-    "/s3.jpg",
-    "/s4.jpg"
+    "/speakathon1.jpg",
+    "/speakathon2.jpg",
+    "/speakathon3.jpg",
+    "/speakathon4.jpg"
   ];
 
   return (
@@ -158,44 +158,41 @@ const SpeakAThon = () => {
         </motion.div>
       </section>
 <br></br><br></br>
-      {/* Journey Section */}
-      {/* <section className="py-16 md:py-20 px-4 md:px-6">
+      {/* Journey Section */} 
+     <section className="py-16 md:py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-sky-400 mb-8 md:mb-12">The Speaking Journey</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-sky-400 mb-8 md:mb-12">Glimpse of Rounds in Speak-A-Thon 2K24</h2>
           <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
             <motion.div whileHover={{ scale: 1.03 }} className="transition-transform duration-300 ease-in-out">
               <Card className="bg-gray-900/50 border border-sky-500/20">
                 <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-sky-300">Round 1: "What If"</h3>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-sky-300">Round 1</h3>
                   <p className="text-sm md:text-base text-gray-300">
-                    Participants dive into the world of possibilities by exploring thought-provoking "What If" questions. With just 1-2 minutes on the clock, they're challenged to think imaginatively and express their vision with impact.
-                  </p>
+                    Participants will select a fictional character of their choice and analyze the character’s flaws. They must also articulate why the character remains their favorite despite these imperfections.</p>
                 </CardContent>
               </Card>
             </motion.div>
             <motion.div whileHover={{ scale: 1.03 }} className="transition-transform duration-300 ease-in-out">
               <Card className="bg-gray-900/50 border border-sky-500/20">
                 <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-sky-300">Round 2: Not yet decided</h3>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-sky-300">Round 2</h3>
                   <p className="text-sm md:text-base text-gray-300">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati commodi minus quidem error illum natus?
-                  </p>
+                    Participants will be paired and presented with a topic. Each participant will be assigned a contrasting stance (e.g., one in favor, one against) and will be required to debate accordingly.</p>
                 </CardContent>
               </Card>
             </motion.div>
             <motion.div whileHover={{ scale: 1.03 }} className="transition-transform duration-300 ease-in-out">
               <Card className="bg-gray-900/50 border border-sky-500/20">
                 <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-sky-300">Round 3: Object's Perspective</h3>
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-sky-300">Round 3</h3>
                   <p className="text-sm md:text-base text-gray-300">
-                    Stepping into the shoes—or rather, the soul—of everyday objects, participants give voice to their thoughts and feelings. Whether it's a worn-out book or a silent clock, each story reflects deep creativity and empathy in just 1-2 minutes.
-                  </p>
+                    Participants will be given a material object and asked to describe or compare it using similes and metaphors. The response should be creative, vivid, and relatable to a general audience.</p>
                 </CardContent>
               </Card>
             </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* Speaker's Toolkit */}
 <section ref={skillsRef} className="py-16 md:py-20 px-4 md:px-6">
@@ -273,7 +270,29 @@ const SpeakAThon = () => {
     </div>
   </div>
 </section>
+{/* About the event */}
+<section className="py-16 px-4 md:px-6">
+  <div className="max-w-4xl mx-auto bg-gray-800/60 border border-sky-500/30 rounded-2xl p-8 md:p-10 text-white shadow-xl">
+    <h2 className="text-2xl md:text-5xl font-bold text-sky-400 mb-10 flex justify-center items-center gap-3">
+       About the event
+    </h2>
 
+    <div className="space-y-4 text-xl md:text-xl flex flex-col items-center">
+      <div className="flex items-center gap-2">
+        <span>
+          Whether you're a seasoned speaker or someone ready to step out of their comfort zone,
+          this is your moment to shine. Speak-A-Thon is more than just a speaking contest — it's a vibrant space to express, connect, and grow. ✨
+          <br /><br />
+          <strong>Why Join?</strong><br />
+          Share your voice, your vision, and your vibe.<br />
+          Participate in a series of fun, interactive, and thought-provoking rounds.<br />
+          Challenge your spontaneity, creativity, and clarity of thought.<br />
+          The mic is yours. 🎙
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-16 md:py-20 px-4 md:px-6">
