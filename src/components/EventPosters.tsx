@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const posters = [
@@ -8,8 +9,10 @@ const posters = [
 ];
 
 const EventPosters = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
+    <section className="py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black relative">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,17 +35,42 @@ const EventPosters = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="overflow-hidden rounded-xl shadow-lg hover:shadow-orange-500/30 transition-all duration-300"
+              className="overflow-hidden rounded-xl shadow-lg hover:shadow-orange-500/30 transition-all duration-300 cursor-pointer bg-black"
             >
               <img
                 src={src}
                 alt={`Event Poster ${index + 1}`}
-                className="w-full h-80 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full max-h-96 object-contain bg-black hover:scale-105 transition-transform duration-500"
+                onClick={() => setSelectedImage(src)}
               />
+              <div className="p-4 text-center">
+                <a
+                  href="https://www.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition"
+                >
+                  Register Now
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>
       </motion.div>
+
+      {/* Modal for Full Image */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+          onClick={() => setSelectedImage(null)}
+        >
+          <img
+            src={selectedImage}
+            alt="Full View"
+            className="w-full max-w-4xl max-h-[90vh] object-contain bg-black p-4 rounded-xl shadow-2xl"
+          />
+        </div>
+      )}
     </section>
   );
 };

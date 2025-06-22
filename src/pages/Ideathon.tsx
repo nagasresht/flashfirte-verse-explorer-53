@@ -556,43 +556,43 @@ const WinnersSection = () => {
 };
 
 // Poster Section Component
-const PosterSection = () => {
-  const { ref: titleRef, isInView: titleInView } = useScrollAnimation(0.3);
-  const { ref: posterRef, isInView: posterInView } = useScrollAnimation(0.3);
+// const PosterSection = () => {
+//   const { ref: titleRef, isInView: titleInView } = useScrollAnimation(0.3);
+//   const { ref: posterRef, isInView: posterInView } = useScrollAnimation(0.3);
 
-  return (
-    <section className="py-20 px-6 relative">
-      <div className="max-w-4xl mx-auto text-center">        
-        <h2 
-          ref={titleRef}
-          className={`text-4xl font-bold mb-12 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent px-2 tracking-wide transition-all duration-1000 ${
-            titleInView ? 'animate-bounce-in' : 'opacity-0 translate-y-10'
-          }`}
-        >
-          Event Poster
-        </h2>
+//   return (
+//     <section className="py-20 px-6 relative">
+//       <div className="max-w-4xl mx-auto text-center">        
+//         <h2 
+//           ref={titleRef}
+//           className={`text-4xl font-bold mb-12 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent px-2 tracking-wide transition-all duration-1000 ${
+//             titleInView ? 'animate-bounce-in' : 'opacity-0 translate-y-10'
+//           }`}
+//         >
+//           Event Poster
+//         </h2>
         
-        <div 
-          ref={posterRef}
-          className={`bg-gradient-to-br from-green-500/10 to-emerald-600/10 border-2 border-green-400/30 rounded-lg p-8 backdrop-blur-sm hover:border-green-400/50 transition-all duration-700 group hover:scale-105 ${
-            posterInView ? 'animate-zoom-in animate-delay-300' : 'opacity-0 scale-75'
-          }`}
-        >
-          <div className="aspect-[2/3] max-w-2xl mx-auto rounded-lg overflow-hidden border border-green-400/20 group-hover:border-green-400/40 transition-all duration-300">
-            <img 
-              src="/Ideathonposter.webp" 
-              alt="Idea-A-Thon Event Poster" 
-              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 bg-gray-900"
-              onError={(e) => {
-                e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDQwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMUYyOTM3Ii8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMTBCOTgxIiBmb250LXNpemU9IjQ4Ij7wn4evPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjM0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwQjk4MSIgZm9udC1zaXplPSIyNCI+SWRlYS1BLVRob248L3RleHQ+Cjx0ZXh0IHg9IjIwMCIgeT0iMzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg5IiBmb250LXNpemU9IjE2Ij5FdmVudCBQb3N0ZXI8L3RleHQ+Cjwvc3ZnPgo=';
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
+//         <div 
+//           ref={posterRef}
+//           className={`bg-gradient-to-br from-green-500/10 to-emerald-600/10 border-2 border-green-400/30 rounded-lg p-8 backdrop-blur-sm hover:border-green-400/50 transition-all duration-700 group hover:scale-105 ${
+//             posterInView ? 'animate-zoom-in animate-delay-300' : 'opacity-0 scale-75'
+//           }`}
+//         >
+//           <div className="aspect-[2/3] max-w-2xl mx-auto rounded-lg overflow-hidden border border-green-400/20 group-hover:border-green-400/40 transition-all duration-300">
+//             <img 
+//               src="/Ideathonposter.webp" 
+//               alt="Idea-A-Thon Event Poster" 
+//               className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 bg-gray-900"
+//               onError={(e) => {
+//                 e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjUwMCIgdmlld0JveD0iMCAwIDQwMCA1MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNTAwIiBmaWxsPSIjMUYyOTM3Ii8+Cjx0ZXh0IHg9IjIwMCIgeT0iMjMwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMTBCOTgxIiBmb250LXNpemU9IjQ4Ij7wn4evPC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjM0MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwQjk4MSIgZm9udC1zaXplPSIyNCI+SWRlYS1BLVRob248L3RleHQ+Cjx0ZXh0IHg9IjIwMCIgeT0iMzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNkI3Mjg5IiBmb250LXNpemU9IjE2Ij5FdmVudCBQb3N0ZXI8L3RleHQ+Cjwvc3ZnPgo=';
+//               }}
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 // Main Index Component
 const Index = () => {
@@ -674,7 +674,6 @@ const Index = () => {
             <GallerySection />
             {/* <JurySection /> */}
             {/* <WinnersSection /> */}
-            <PosterSection />
           </div>
         </div>
       )}
