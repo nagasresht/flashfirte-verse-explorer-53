@@ -270,21 +270,21 @@ const DesignAThon = () => {
         <p className="text-center text-purple-200 mb-6 md:mb-12 text-xs md:text-base">
           Witness the creativity and energy from our amazing participants of last year!
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 lg:gap-8 m-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 lg:gap-8 m-2">
           {["/5.jpg", "/6.jpg", "/7.png", "/8.jpg"].map((imgSrc, index) => (
             <motion.div
-              key={index}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-gradient-to-br from-purple-800 to-pink-800 rounded-xl md:rounded-2xl p-1 md:p-4 shadow-lg flex flex-col items-center mb-2"
-            >
-              <img
-                src={imgSrc}
-                alt={`Participant ${index + 1}`}
-                className="rounded-xl m-2 w-full h-48 object-cover"
-              />
+  key={index}
+  whileHover={{ scale: 1.03 }}
+  whileTap={{ scale: 0.97 }}
+  className="bg-gradient-to-br from-purple-800 to-pink-800 rounded-xl overflow-hidden shadow-md transition-all duration-300"
+>
+  <img
+    src={imgSrc}
+    alt={`Participant ${index + 1}`}
+    className="w-full p-3 h-48 object-cover"
+  />
+</motion.div>
 
-            </motion.div>
           ))}
         </div>
       </div>
