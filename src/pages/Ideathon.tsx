@@ -128,7 +128,7 @@ const IdeathonLoader = () => {
             showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <h1 className="text-5xl font-bold text-green-400 mb-4 animate-pulse">
-              Idea-A-Thon
+              Idea-Thon
             </h1>
             <p className="text-green-300 text-xl font-medium animate-pulse">
               Where ideas take flight and innovation begins
@@ -173,7 +173,7 @@ const HeroSection = () => {
         >
            <Lightbulb className="w-24 h-24 text-green-400 animate-pulse mx-2" />
           <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent px-3  tracking-wide whitespace-nowrap">
-            Idea-A-Thon
+            Idea-Thon
           </h1>
             
         </div>
@@ -205,26 +205,28 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-5 text-lg font-semibold rounded-full transition-all duration-300 green-glow hover:green-glow-intense group shadow-md"
-            onClick={() => scrollToSection('domains-section')}
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScOnrTNHSnEX23uzi_d9TWFl_hNf2Wc4tla876EyU-CNUxuQQ/viewform', '_blank')}
           >
-            <Sparkles className="w-5 h-5 mr-2 group-hover:animate-spin" />
-            Start Ideating
+            <ClipboardPen className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+            Register Now
           </Button>
-          
+
           <Button 
             size="lg" 
             variant="outline" 
             className="border-2 border-green-400 text-green-400 hover:bg-green-400/20 hover:text-green-300 hover:border-green-300 px-8 py-5 text-lg font-semibold rounded-full transition-all duration-300 shadow-md"
-            onClick={() => scrollToSection('gallery-section')}
+            onClick={() => scrollToSection('domains-section')}
           >
-            View Gallery
-          </Button>          <Button 
+            View Domains
+          </Button>       
+  
+          <Button 
             size="lg" 
             className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-8 py-5 text-lg font-semibold rounded-full transition-all duration-300 green-glow hover:green-glow-intense group shadow-md"
-            onClick={() => window.open('https://google.com', '_blank')}
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSecsRxWeVVw7t5RbT3W8Bi2wLAQLeWTOOODuSzHl1B0_f3iFw/viewform', '_blank')}
           >
-            <ClipboardPen className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-            Register Now
+            <Sparkles className="w-5 h-5 mr-2 group-hover:animate-spin" />
+            Submit Your Idea
           </Button>
         </div>
       </div>
