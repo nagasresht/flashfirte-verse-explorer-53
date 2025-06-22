@@ -17,14 +17,46 @@ const GameAThon = () => {
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
   const skillsRef = useRef<HTMLDivElement>(null);
-  const galleryRef = useRef<HTMLDivElement>(null);
-
-  const handleRegisterClick = () => {
-    skillsRef.current?.scrollIntoView({ behavior: "smooth" });
+  const galleryRef = useRef<HTMLDivElement>(null);  const handleScrollToSkills = () => {
+    console.log('Scrolling to skills section...');
+    // Try using ref first, then fallback to getElementById
+    if (skillsRef.current) {
+      console.log('Using ref to scroll to skills');
+      skillsRef.current.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    } else {
+      console.log('Using getElementById to scroll to skills');
+      const skillsElement = document.getElementById('skills');
+      skillsElement?.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
   };
 
-  const handleViewHighlightsClick = () => {
-    galleryRef.current?.scrollIntoView({ behavior: "smooth" });
+  const handleScrollToGallery = () => {
+    console.log('Scrolling to gallery section...');
+    // Try using ref first, then fallback to getElementById
+    if (galleryRef.current) {
+      console.log('Using ref to scroll to gallery');
+      galleryRef.current.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    } else {
+      console.log('Using getElementById to scroll to gallery');
+      const galleryElement = document.getElementById('gallery');
+      galleryElement?.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest"
+      });
+    }
   };
 
   const gameOverview = [
@@ -207,9 +239,8 @@ const GameAThon = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <Button
-              onClick={() => skillsRef.current?.scrollIntoView({ behavior: "smooth" })}
+          >            <Button
+              onClick={handleScrollToSkills}
               className="bg-gradient-to-r from-[#FF5733] to-[#FFC300] hover:from-[#D97706] hover:to-[#FF5733] text-white px-8 py-4 text-lg rounded-full shadow-lg hover:scale-105 transition-all duration-300"
             >
               <Dice5 className="mr-2 w-5 h-5" />
@@ -221,9 +252,8 @@ const GameAThon = () => {
             >
               <Gamepad className="mr-3 w-6 h-6" />
               Join Game-A-THON
-            </Button>
-            <Button
-              onClick={handleViewHighlightsClick}
+            </Button>            <Button
+              onClick={handleScrollToGallery}
               className="bg-gradient-to-r from-[#FF5733] to-[#FFC300] hover:from-[#D97706] hover:to-[#FF5733] text-white px-8 py-4 text-lg rounded-full shadow-lg hover:scale-105 transition-all duration-300"
             >
               <Sparkles className="mr-2 w-5 h-5" />
@@ -299,12 +329,11 @@ const GameAThon = () => {
         </motion.div>
       </section>
 
-      
-
-    {/* Skills Section */}
+      {/* Skills Section */}
 <section
   ref={skillsRef}
-  className="pt-20 px-6 sm:px-10 md:px-16 bg-gradient-to-r from-[#431800]/20 to-[#8B3E00]/20"
+  id="skills"
+  className="pt-20 px-6 sm:px-10 md:px-16 bg-gradient-to-r from-[#431800]/20 to-[#8B3E00]/20 scroll-mt-20"
 >
   <motion.div
     style={{ y: y2 }}
@@ -346,11 +375,8 @@ const GameAThon = () => {
       ))}
     </div>
   </motion.div>
-</section>
-
-
-      {/* Gallery Section */}
-      <section ref={galleryRef} id="gallery" className="text-white py-20 px-6 sm:px-10 md:px-16  mt-0">
+</section>      {/* Gallery Section */}
+      <section ref={galleryRef} id="gallery" className="text-white py-20 px-6 sm:px-10 md:px-16 mt-0 scroll-mt-20">
         <h2 className="text-4xl font-bold text-center mb-4 pb-2">
           A Glimpse of Last Year's Talents
         </h2>
