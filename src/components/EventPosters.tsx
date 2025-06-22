@@ -1,15 +1,24 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const posters = [
   "/IDEATHON.png",
-  "/IDEATHON.png",
-  "/IDEATHON.png",
-  "/IDEATHON.png"
+  "/gt.png",
+  "/st.png",
+  "/dt.png"
+];
+
+const routes = [
+  "/ideathon",
+  "/gamingverse",
+  "/speakathon",
+  "/design-realm" // must match route in App.tsx
 ];
 
 const EventPosters = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black relative">
@@ -44,14 +53,12 @@ const EventPosters = () => {
                 onClick={() => setSelectedImage(src)}
               />
               <div className="p-4 text-center">
-                <a
-                  href="https://www.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-2 px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition"
+                <button
+                  onClick={() => navigate(routes[index])}
+                  className="mt-2 px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition"
                 >
                   Register Now
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}
@@ -61,13 +68,13 @@ const EventPosters = () => {
       {/* Modal for Full Image */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-90 z-[1000] flex items-center justify-center px-4"
           onClick={() => setSelectedImage(null)}
         >
           <img
             src={selectedImage}
             alt="Full View"
-            className="w-full max-w-4xl max-h-[90vh] object-contain bg-black p-4 rounded-xl shadow-2xl"
+            className="w-full max-w-4xl max-h-[80vh] object-contain scale-95 transition-transform duration-300 rounded-xl shadow-2xl"
           />
         </div>
       )}

@@ -26,7 +26,7 @@ const Header = () => {
     { name: "Game-A-Thon", path: "/gamingverse" },
     { name: "Speak-A-Thon", path: "/speakathon" },
     { name: "Design-A-Thon", path: "/design-realm" },
-    { name: "Register", path: "/register" },
+    { name: "Register", path: "#" }, // dummy path, not used
   ];
 
   return (
@@ -48,13 +48,12 @@ const Header = () => {
               />
             </a>
             <a href="https://www.vnrvjietcsi.com" target="_blank" rel="noopener noreferrer">
-             <img
-  src="/csilogo.png"
-  alt="CSI-VNRVJIET"
-  className="h-12 md:h-14 object-contain rounded-sm transition duration-300 hover:scale-105"
-/>
-</a>
-
+              <img
+                src="/csilogo.png"
+                alt="CSI-VNRVJIET"
+                className="h-12 md:h-14 object-contain rounded-sm transition duration-300 hover:scale-105"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -70,34 +69,42 @@ const Header = () => {
                   </button>
                   {showDropdown && (
                     <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-2 min-w-[200px] bg-black border border-gray-700 rounded-md z-50 flex flex-col shadow-xl transition-all duration-200">
-                      <Link
-                        to="/ideathon"
+                      <a
+                        href="https://forms.gle/wW2HscDPNgyKTdjh8"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
                         Idea-A-Thon
-                      </Link>
-                      <Link
-                        to="/gamingverse"
+                      </a>
+                      <a
+                        href="https://forms.gle/U9dyzPfkThYyWfMa8"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
                         Game-A-Thon
-                      </Link>
-                      <Link
-                        to="/design-realm"
+                      </a>
+                      <a
+                        href="https://forms.gle/gxfJgUsBV67QbotEA"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
                         Design-A-Thon
-                      </Link>
-                      <Link
-                        to="/speakathon"
+                      </a>
+                      <a
+                        href="https://forms.gle/akPuzhfUSJJu37SFA"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="px-4 py-2 hover:bg-yellow-500 text-white hover:text-black"
                         onClick={() => setShowDropdown(false)}
                       >
                         Speak-A-Thon
-                      </Link>
+                      </a>
                     </div>
                   )}
                 </div>
@@ -115,67 +122,76 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <Button
-  variant="ghost"
-  size="icon"
-  className="lg:hidden text-black hover:bg-gray-400  bg-white/50 shadow-md z-[10000]"
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
->
-  {isMenuOpen ? <X /> : <Menu />}
-</Button>
-
-{/* Mobile Dropdown Menu */}
-{/* Mobile Dropdown Menu */}
-{isMenuOpen && (
-<div className="absolute top-full right-4 mt-2 w-44 bg-white/80 backdrop-blur-md shadow-md text-black px-2 py-2 space-y-1 rounded-lg z-[9998]">
-
-
-    {navItems.map((item) =>
-      item.name === "Register" ? (
-        <div key={item.name} className="relative" ref={dropdownRef}>
-          <button
-            onClick={() => setShowDropdown(!showDropdown)}
-            className="w-full text-left px-4 py-2 rounded-md font-semibold bg-yellow-500 text-black hover:bg-yellow-400 transition"
+            variant="ghost"
+            size="icon"
+            className="lg:hidden text-black hover:bg-gray-400 bg-white/50 shadow-md z-[10000]"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            Register
-          </button>
-          {showDropdown && (
-            <div className="absolute top-full left-0 mt-2 w-60 bg-black border border-gray-700 rounded-md shadow-xl z-[9999]">
-              {[
-                { name: "Idea-A-Thon", path: "/ideathon" },
-                { name: "Game-A-Thon", path: "/gamingverse" },
-                { name: "Design-A-Thon", path: "/design-realm" },
-                { name: "Speak-A-Thon", path: "/speakathon" },
-              ].map(({ name, path }) => (
-                <Link
-                  key={name}
-                  to={path}
-                  className="block px-4 py-2 text-white hover:bg-yellow-500 hover:text-black"
-                  onClick={() => {
-                    setShowDropdown(false);
-                    setIsMenuOpen(false);
-                  }}
-                >
-                  {name}
-                </Link>
-              ))}
+            {isMenuOpen ? <X /> : <Menu />}
+          </Button>
+
+          {/* Mobile Dropdown Menu */}
+          {isMenuOpen && (
+            <div className="absolute top-full right-4 mt-2 w-44 bg-white/80 backdrop-blur-md shadow-md text-black px-2 py-2 space-y-1 rounded-lg z-[9998]">
+              {navItems.map((item) =>
+                item.name === "Register" ? (
+                  <div key={item.name} className="relative" ref={dropdownRef}>
+                    <button
+                      onClick={() => setShowDropdown(!showDropdown)}
+                      className="w-full text-left px-4 py-2 rounded-md font-semibold bg-yellow-500 text-black hover:bg-yellow-400 transition"
+                    >
+                      Register
+                    </button>
+                    {showDropdown && (
+                      <div className="absolute top-full left-0 mt-2 w-60 bg-black border border-gray-700 rounded-md shadow-xl z-[9999]">
+                        {[
+                          {
+                            name: "Idea-A-Thon",
+                            url: "https://forms.gle/wW2HscDPNgyKTdjh8",
+                          },
+                          {
+                            name: "Game-A-Thon",
+                            url: "https://forms.gle/U9dyzPfkThYyWfMa8",
+                          },
+                          {
+                            name: "Design-A-Thon",
+                            url: "https://forms.gle/gxfJgUsBV67QbotEA",
+                          },
+                          {
+                            name: "Speak-A-Thon",
+                            url: "https://forms.gle/akPuzhfUSJJu37SFA",
+                          },
+                        ].map(({ name, url }) => (
+                          <a
+                            key={name}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-4 py-2 text-white hover:bg-yellow-500 hover:text-black"
+                            onClick={() => {
+                              setShowDropdown(false);
+                              setIsMenuOpen(false);
+                            }}
+                          >
+                            {name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="block px-4 py-2 rounded-md font-medium bg-zinc-900 text-white hover:bg-pink-100 hover:text-black transition"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </div>
           )}
-        </div>
-      ) : (
-        <Link
-          key={item.name}
-          to={item.path}
-          className="block px-4 py-2 rounded-md font-medium bg-zinc-900 text-white hover:bg-pink-100 hover:text-black transition"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          {item.name}
-        </Link>
-      )
-    )}
-  </div>
-)}
-
-
         </div>
       </div>
     </motion.header>

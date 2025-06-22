@@ -212,7 +212,7 @@ const GameAThon = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button
-              onClick={handleRegisterClick}
+              onClick={() => window.open("https://forms.gle/U9dyzPfkThYyWfMa8", "_blank")}
               className="bg-gradient-to-r from-[#FF5733] to-[#FFC300] hover:from-[#D97706] hover:to-[#FF5733] text-white px-8 py-4 text-lg rounded-full shadow-lg hover:scale-105 transition-all duration-300"
             >
               <Sparkles className="mr-2 w-5 h-5" />

@@ -75,12 +75,18 @@ const SpeakAThon = () => {
           transition={{ duration: 0.8 }}
           className="max-w-6xl mx-auto text-center"
         >
+          <br></br><br></br><br></br>
+          <center>
           <div className="flex flex-col md:flex-row items-center justify-center mb-8">
-            <Megaphone className="w-12 h-12 md:w-16 md:h-16 text-sky-500 md:mr-4 mb-4 md:mb-0" />
-            <h1 className="text-4xl md:text-7xl font-bold text-sky-300">
-              Speak-A-Thon
-            </h1>
-          </div>
+  <Megaphone className="w-14 h-14 md:w-16 md:h-16 text-sky-500 md:mr-4 mb-4 md:mb-0" />
+  <h1 className="text-5xl md:text-8xl font-bold text-sky-300">
+    Speak-A-Thon
+  </h1>
+</div>
+
+
+          </center>
+          <br></br>
           <p className="text-xl md:text-2xl text-sky-400 mb-6 md:mb-8">Amplify Your Voice</p>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -92,6 +98,8 @@ const SpeakAThon = () => {
             <br className="hidden md:block" />
             An engaging platform where participants are challenged to step beyond fear and express themselves with clarity, creativity, and confidence.
           </motion.p>
+          <br></br>
+          <br></br>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               onClick={handleStartSpeakingClick}
@@ -106,23 +114,32 @@ const SpeakAThon = () => {
               className="w-full sm:w-60 bg-white text-sky-500 hover:bg-sky-400 hover:text-white px-6 py-4 text-lg rounded-full flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
             >
               <Users className="mr-2 w-5 h-5" />
-              View Speakers
+              View Gallery
             </Button>
 
-            <Button
-              className="w-full sm:w-60 bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white px-6 py-4 text-lg rounded-full flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
-            >
-              <Mic className="mr-2 w-5 h-5" />
-              Register Now
-            </Button>
+            <a
+  href="https://forms.gle/akPuzhfUSJJu37SFA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full sm:w-60"
+>
+  <Button
+    className="w-full bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white px-6 py-4 text-lg rounded-full flex items-center justify-center transform transition-transform duration-300 hover:scale-105"
+  >
+    <Mic className="mr-2 w-5 h-5" />
+    Register Now
+  </Button>
+</a>
           </div>
         </motion.div>
       </section>
-
+      <br></br><br></br>
       {/* Speaking Challenges */}
       <section className="py-16 md:py-20 px-4 md:px-6">
         <motion.div className="max-w-6xl mx-auto text-center">
+          <br></br><br></br>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-sky-400">Speaking Arena</h2>
+          <br></br><br></br>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {speakingChallenges.map((challenge, index) => (
               <motion.div
@@ -140,9 +157,9 @@ const SpeakAThon = () => {
           </div>
         </motion.div>
       </section>
-
+<br></br><br></br>
       {/* Journey Section */}
-      <section className="py-16 md:py-20 px-4 md:px-6">
+      {/* <section className="py-16 md:py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-sky-400 mb-8 md:mb-12">The Speaking Journey</h2>
           <div className="grid grid-cols-1 gap-6 max-w-3xl mx-auto">
@@ -178,32 +195,40 @@ const SpeakAThon = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Speaker's Toolkit */}
-      <section ref={skillsRef} className="py-16 md:py-20 px-4 md:px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-sky-400">Speaker's Toolkit</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
-            {speakingTools.map((tool, index) => (
-              <motion.div 
-                key={index} 
-                whileHover={{ scale: 1.05 }} 
-                className="transition-transform duration-300 ease-in-out bg-gray-800/60 border border-sky-500/20 rounded-xl p-3 md:p-4"
-              >
-                <div className="text-2xl md:text-3xl mb-1 md:mb-2">{tool.icon}</div>
-                <div className="text-sm md:text-base text-white font-medium">{tool.name}</div>
-              </motion.div>
-            ))}
+<section ref={skillsRef} className="py-16 md:py-20 px-4 md:px-6">
+  <div className="max-w-6xl mx-auto text-center">
+    <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-10 text-sky-400">
+      Speaker's Toolkit
+    </h2>
+<br></br><br></br>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {speakingTools.map((tool, index) => (
+        <motion.div
+          key={index}
+          whileHover={{ scale: 1.05 }}
+          className="bg-gray-800/60 border border-sky-500/20 rounded-xl p-6 md:p-8 flex flex-col items-center justify-center text-center transition-transform duration-300 ease-in-out"
+        >
+          <div className="text-5xl mb-4">{tool.icon}</div>
+          <div className="text-base md:text-lg text-white font-semibold">
+            {tool.name}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Gallery */}
       <section ref={galleryRef} className="py-16 md:py-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sky-400">Voices That Inspired Us</h2>
-          <p className="text-sm md:text-base text-gray-300 mb-8 md:mb-12">Witness the passion and eloquence from our amazing speakers of last year!</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-sky-400">Highlights from Last Year’s Voices</h2>
+          <br></br><br></br>
+          <p className="text-sm md:text-base text-gray-300 mb-8 md:mb-12">Glimpses of confidence, clarity, and expression from Speak-A-Thon!</p>
+          <br></br><br></br>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {galleryImages.map((src, index) => (
               <motion.div 
@@ -221,48 +246,58 @@ const SpeakAThon = () => {
           </div>
         </div>
       </section>
-
+<br></br><br></br>
       {/* Event Details */}
-      <section className="px-4 md:px-6 pb-16 md:pb-20">
-        <div className="max-w-6xl mx-auto grid place-items-center">
-          <motion.div 
-            whileHover={{ scale: 1.08 }} 
-            className="transition-transform duration-500 ease-in-out w-full max-w-md md:max-w-xl"
-          >
-            <Card className="bg-gray-900/60 border border-sky-500/20">
-              <CardContent className="p-6 md:p-8 text-center">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-sky-300">Event Details</h3>
-                <p className="text-sm md:text-lg text-gray-300 mb-2">
-                  📅 <strong>Date:</strong> 28 June 2025
-                </p>
-                <p className="text-sm md:text-lg text-gray-300 mb-2">
-                  🕒 <strong>Time:</strong> 09:00 am - 12:00 pm
-                </p>
-                <p className="text-sm md:text-lg text-gray-300 mb-2">
-                  💻 <strong>Mode:</strong> Online
-                </p>
-                <p className="text-sm md:text-lg text-gray-300">
-                  💰 <strong>Cash Prize Pool:</strong> ₹2000
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
+<section className="py-16 px-4 md:px-6">
+  <div className="max-w-xl mx-auto bg-gray-800/60 border border-sky-500/30 rounded-2xl p-8 md:p-10 text-white shadow-xl">
+    <h2 className="text-4xl md:text-5xl font-bold text-sky-400 mb-10 flex justify-center items-center gap-3">
+       Event Details
+    </h2>
+
+    <div className="space-y-4 text-xl md:text-2xl flex flex-col items-center">
+      <div className="flex items-center gap-2">
+        <span className="text-2xl">📅</span>
+        <span className="font-bold">Date :</span>
+        <span>28 June 2025</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-2xl">⏰</span>
+        <span className="font-bold">Time :</span>
+        <span>09:00 am – 12:00 pm</span>
+      </div>
+      <div className="flex items-center gap-2">
+        <span className="text-2xl">💻</span>
+        <span className="font-bold">Mode :</span>
+        <span>Online</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* CTA */}
       <section className="py-16 md:py-20 px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-sky-400">Ready to Make Your Voice Heard?</h2>
+          <br></br><br></br>
           <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-8">
             Join the speaking revolution and inspire the world with your words
-          </p>
-          <Button className="bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl rounded-full">
-            <Mic className="mr-2 md:mr-3 w-5 h-5 md:w-6 md:h-6" />
-            Register Now
-          </Button>
+          </p><br></br><br></br>
+          <a
+  href="https://forms.gle/akPuzhfUSJJu37SFA"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-block"
+>
+  <Button className="w-full max-w-xs md:max-w-md p-auto bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white px-8 md:px-12 py-4 md:py-6 text-lg md:text-xl rounded-full">
+    <Mic className="mr-2 md:mr-3 w-5 h-5 md:w-6 md:h-6" />
+    Register Now
+  </Button>
+</a>
+
         </div>
       </section>
+      <br></br><br></br>
     </div>
   );
 };
