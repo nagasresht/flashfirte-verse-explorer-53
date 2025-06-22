@@ -36,7 +36,7 @@ const Schedule = () => {
               </li>
               <li>
                 <p className="text-lg">
-                  <span className="font-semibold text-cyan-400">Idea-A-Thon :</span>  2:00 PM-5:00 PM
+                  <span className="font-semibold text-cyan-400">IdeaThon :</span>  2:00 PM-5:00 PM
                 </p>
               </li>
             </ul>

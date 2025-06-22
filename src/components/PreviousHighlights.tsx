@@ -7,7 +7,7 @@ const PreviousHighlights = () => {
   {
     
   id: 1,
-  title: "Idea-A-Thon",
+  title: "IdeaThon",
   description: "Innovate groundbreaking solutions to real challenges.",
   image: "/4.jpg", // ✅ if 1.jpg is inside the /public folder
   stats: "90+ Participants"
