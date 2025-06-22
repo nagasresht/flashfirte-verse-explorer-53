@@ -11,6 +11,7 @@ import DesignRealm from "./pages/DesignRealm";
 import Gamingverse from "./pages/Gamingverse";
 import NotFound from "./pages/NotFound";
 
+
 const queryClient = new QueryClient();
 
 const App = () => (

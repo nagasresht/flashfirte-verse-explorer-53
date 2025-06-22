@@ -12,6 +12,7 @@ import EventPortal from "@/components/EventPortal";
 import PreviousHighlights from "@/components/PreviousHighlights";
 import Schedule from "@/components/Schedule";
 import EventDateCard from "@/components/EventDateCard";
+import EventPosters from "@/components/EventPosters"
 
 const Index = () => {
   const { scrollY } = useScroll();

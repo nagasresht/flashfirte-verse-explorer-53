@@ -51,7 +51,7 @@ const Header = () => {
               <img
                 src="/csilogo.png"
                 alt="CSI-VNRVJIET"
-                className="h-12 md:h- object-contain rounded-sm transition duration-300 hover:scale-105"
+                className="h-14 md:h- object-contain rounded-sm transition duration-300 hover:scale-105"
               />
             </a>
           </div>
