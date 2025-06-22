@@ -48,12 +48,13 @@ const Header = () => {
               />
             </a>
             <a href="https://www.vnrvjietcsi.com" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/csilogo.png"
-                alt="CSI-VNRVJIET"
-                className="h-14 md:h- object-contain rounded-sm transition duration-300 hover:scale-105"
-              />
-            </a>
+             <img
+  src="/csilogo.png"
+  alt="CSI-VNRVJIET"
+  className="h-12 md:h-14 object-contain rounded-sm transition duration-300 hover:scale-105"
+/>
+</a>
+
           </div>
 
           {/* Desktop Navigation */}

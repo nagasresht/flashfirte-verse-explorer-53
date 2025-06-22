@@ -199,6 +199,7 @@ const Index = () => {
           </div>
         </motion.div>
       </section>
+      <EventPosters />
       <PreviousHighlights />
       <Schedule />
 

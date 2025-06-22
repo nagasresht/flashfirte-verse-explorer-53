@@ -9,28 +9,28 @@ const PreviousHighlights = () => {
   id: 1,
   title: "Idea-A-Thon",
   description: "Innovate groundbreaking solutions to real challenges.",
-  image: "/1.jpg", // ✅ if 1.jpg is inside the /public folder
+  image: "/4.jpg", // ✅ if 1.jpg is inside the /public folder
   stats: "90+ Participants"
 },
   {
     id: 2,
     title: "Game-A-Thon",
     description: "Showcase gaming skills in electrifying battles.",
-    image: "/2.jpg",
+    image: "/3.jpg",
     stats: "120+ Participants"
   },
   {
     id: 3,
     title: "Design-A-Thon",
     description: "Craft stunning visuals and intuitive experiences.",
-    image: "/3.jpg",
+    image: "/1.jpg",
     stats: "70+ Participants"
   },
   {
     id: 4,
     title: "Speak-A-Thon",
     description: "Command the stage with persuasive power.",
-    image: "/4.jpg",
+    image: "/2.jpg",
     stats: "40+ Participants"
   }
 ];
