@@ -154,8 +154,8 @@ const GameAThon = () => {
               ease: "easeInOut",
             }}
             style={{
-              left:` ${Math.random() * 100}%`,
-              top:` ${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
               fontSize: `${Math.random() * 4 + 3}rem`,
               color: item.color,
             }}
@@ -217,11 +217,10 @@ const GameAThon = () => {
             </Button>
             <Button
               onClick={() => window.open("https://forms.gle/5d8VaPR9iqwMbt487", "_blank")}
-              variant="outline"
-              className="border-[#FFC300] text-[#FFC300] hover:bg-[#FFC300] hover:text-white px-8 py-4 text-lg rounded-full transition-all duration-300"
+              className="bg-gradient-to-r from-[#FF5733] via-[#FFC300] to-[#D97706] hover:from-[#D97706] hover:via-[#FFC300] hover:to-[#FF5733] text-white px-12 py-6 text-xl rounded-full shadow-2xl transition-all duration-300"
             >
-              <Monitor className="mr-2 w-5 h-5" />
-              Register Now
+              <Gamepad className="mr-3 w-6 h-6" />
+              Join Game-A-THON
             </Button>
             <Button
               onClick={handleViewHighlightsClick}
@@ -300,52 +299,6 @@ const GameAThon = () => {
         </motion.div>
       </section>
 
-      {/* Rounds Breakdown Section */}
-      <section id="rounds" className="py-20 px-6 sm:px-8 md:px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-7xl mx-auto"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 pb-2 bg-gradient-to-r from-[#FF5733] to-[#FFC300] bg-clip-text text-transparent">
-            Rounds Breakdown
-          </h2>
-          <p className="text-center text-white-400 mb-12 text-lg">
-            Your gaming journey through 5 exciting rounds
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {rounds.map((round, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                className="group cursor-pointer h-full flex"
-              >
-                <Card className="flex flex-col justify-between bg-black/10 backdrop-blur border border-white/10 p-6 h-full rounded-xl">
-                  <CardContent className="flex flex-col gap-4">
-                    <div className="flex items-center gap-4">
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${round.color} flex items-center justify-center font-bold text-white`}>
-                        {round.number}
-                      </div>
-                      <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${round.color} flex items-center justify-center`}>
-                        {round.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold text-[#FFD166]">{round.title}</h3>
-                    <p className="text-gray-300 text-sm">{round.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
       
 
     {/* Skills Section */}
@@ -438,7 +391,10 @@ const GameAThon = () => {
             Join the ultimate gaming tournament and show your skills
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-gradient-to-r from-[#FF5733] via-[#FFC300] to-[#D97706] hover:from-[#D97706] hover:via-[#FFC300] hover:to-[#FF5733] text-white px-12 py-6 text-xl rounded-full shadow-2xl transition-all duration-300">
+            <Button
+              onClick={() => window.open("https://forms.gle/5d8VaPR9iqwMbt487", "_blank")}
+              className="bg-gradient-to-r from-[#FF5733] via-[#FFC300] to-[#D97706] hover:from-[#D97706] hover:via-[#FFC300] hover:to-[#FF5733] text-white px-12 py-6 text-xl rounded-full shadow-2xl transition-all duration-300"
+            >
               <Gamepad className="mr-3 w-6 h-6" />
               Join Game-A-THON
             </Button>
