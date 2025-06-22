@@ -57,7 +57,7 @@ const EventPosters = () => {
                   onClick={() => navigate(routes[index])}
                   className="mt-2 px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition"
                 >
-                  Register Now
+                  More Info 
                 </button>
               </div>
             </motion.div>
