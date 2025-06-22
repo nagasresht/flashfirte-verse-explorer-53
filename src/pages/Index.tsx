@@ -111,7 +111,7 @@ const Index = () => {
               <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-orange-400 to-cyan-400 bg-clip-text text-transparent">
                 FlashForte
               </h1>
-              <span className="text-3xl md:text-4xl font-bold text-gray-400 mb-2">3.0</span>
+              <span className="text-3xl md:text-4xl font-bold text-gray-400 mb-2">2k25</span>
             </div>
             <p className="text-2xl md:text-3xl text-cyan-400 font-light tracking-wider">
               One Event. Many Realities.
@@ -215,7 +215,7 @@ const Index = () => {
     </div>
 
     <p className="text-gray-400 mb-8">
-      © 2025 FlashForte. All rights reserved. | One Event. Many Realities.
+      © FlashForte 2k25. All rights reserved. | One Event. Many Realities.
     </p>
 
   </div>
