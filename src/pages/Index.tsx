@@ -34,7 +34,7 @@ const Index = () => {
   const eventPortals = [
     {
       id: "ideathon",
-      title: "Idea-A-Thon",
+      title: "IdeaThon",
       subtitle: "Tech Innovation Lab",
       description: "Dive into AI holograms and transparent circuits",
       icon: <Monitor className="w-8 h-8" />,

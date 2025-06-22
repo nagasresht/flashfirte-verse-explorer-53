@@ -128,7 +128,7 @@ const IdeathonLoader = () => {
             showText ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
             <h1 className="text-5xl font-bold text-green-400 mb-4 animate-pulse">
-              Idea-Thon
+              IdeaThon
             </h1>
             <p className="text-green-300 text-xl font-medium animate-pulse">
               Where ideas take flight and innovation begins
@@ -173,7 +173,7 @@ const HeroSection = () => {
         >
            <Lightbulb className="w-24 h-24 text-green-400 animate-pulse mx-2" />
           <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent px-3  tracking-wide whitespace-nowrap">
-            Idea-Thon
+            IdeaThon
           </h1>
             
         </div>

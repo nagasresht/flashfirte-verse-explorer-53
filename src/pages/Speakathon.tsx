@@ -56,10 +56,10 @@ const SpeakAThon = () => {
   ];
 
   const galleryImages = [
-    "/speakathon1.jpg",
-    "/speakathon2.jpg",
-    "/speakathon3.jpg",
-    "/speakathon4.jpg"
+    "/s1.jpg",
+    "/s2.jpg",
+    "/s3.jpg",
+    "/s4.jpg"
   ];
 
   return (
