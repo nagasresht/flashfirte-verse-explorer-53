@@ -1,6 +1,3 @@
-Got it! Here's a **clean, professional README.md** without any reference to Lovable — tailored specifically for your event/project "FlashForte – Verse Explorer 53":
-
----
 
 # ⚡ FlashForte – Verse Explorer 53
 
@@ -65,6 +62,4 @@ bun dev
 
 A creative effort by the CSI Web Team as part of FlashForte, featuring contributions in design, gameplay logic, and backend structuring.
 
----
 
-Let me know if you want this in a downloadable `.md` or `.txt` file!
